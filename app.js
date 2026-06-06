@@ -62,6 +62,7 @@
       ],
       tags: ["React 19","Node.js","Supabase","Redis/BullMQ","LLMs","SaaS"],
       links: [["Visit","https://www.trycreda.app","link"]],
+      img: "assets/projects/creda/cover.jpg",
     },
     {
       title: "Stress Detection System",
@@ -77,6 +78,7 @@
       ],
       tags: ["Python","MediaPipe","rPPG","Random Forest","CV"],
       links: [["GitHub","https://github.com/SheeshDarth/Stress-Detection-System","github"]],
+      img: "assets/projects/stress-detection/cover.jpg",
     },
     {
       title: "NirmiqResearchOS — Academic Intelligence System",
@@ -92,6 +94,7 @@
       ],
       tags: ["Python","FastAPI","Next.js","SQLite","Chroma","BM25","Ollama","Local AI"],
       links: [["GitHub","https://github.com/SheeshDarth/NirmiqResearchOS","github"]],
+      img: "assets/projects/nirmiq-ais/cover.jpg",
     },
     {
       title: "AGION Wellness Platform",
@@ -107,6 +110,7 @@
       ],
       tags: ["Flutter","RAG","LLM","Health AI","Edge AI","B2B"],
       links: [["GitHub","https://github.com/SheeshDarth/AGION","github"]],
+      img: "assets/projects/agion/cover.jpg",
     },
     {
       title: "Project Aarna — Blue Carbon MRV",
@@ -124,6 +128,7 @@
         ["Visit","https://project-aarna-web.vercel.app","link"],
         ["GitHub","https://github.com/SheeshDarth/project-aarna","github"],
       ],
+      img: "assets/projects/project-aarna/cover.jpg",
     },
     {
       title: "Trust Layer — Privacy Risk Analyser",
@@ -138,6 +143,7 @@
       ],
       tags: ["Privacy Tech","Chrome Extension","Express API","LLM"],
       links: [["GitHub","https://github.com/SheeshDarth","github"]],
+      img: "assets/projects/trust-layer/cover.jpg",
     },
     {
       title: "Anonthera — Anonymous Mental Health Platform",
@@ -153,6 +159,7 @@
       ],
       tags: ["React","Vite","Firebase","Gemini API","Framer Motion","Mental Health"],
       links: [["GitHub","https://github.com/SheeshDarth/Anonthera","github"]],
+      img: "assets/projects/anonthera/cover.jpg",
     },
     {
       title: "PayGuard DQ — Payment Data Quality System",
@@ -168,6 +175,7 @@
       ],
       tags: ["Python","FastAPI","Next.js","TypeScript","Docker","Recharts","Multi-Agent"],
       links: [["GitHub","https://github.com/SheeshDarth/PayGuard-DQ","github"]],
+      img: "assets/projects/payguard-dq/cover.jpg",
     },
     {
       title: "NirmiqEcho — Offline Voice-to-Text",
@@ -183,6 +191,7 @@
       ],
       tags: ["Python","faster-whisper","WebRTC VAD","pyautogui","CUDA","Tkinter","Privacy"],
       links: [["GitHub","https://github.com/SheeshDarth/NirmiqEcho","github"]],
+      img: "assets/projects/nirmiq-echo/cover.jpg",
     },
     {
       title: "NirmiqLearnOS — Personal Learning OS",
@@ -198,6 +207,7 @@
       ],
       tags: ["TypeScript","Next.js","SQLite","Drizzle ORM","Tailwind","Local AI","EdTech"],
       links: [["GitHub","https://github.com/SheeshDarth/NirmiqLearnOS","github"]],
+      img: "assets/projects/nirmiq-learnos/cover.jpg",
     },
   ];
 
@@ -240,7 +250,10 @@
     const links  = p.links.map(([label, href, kind]) =>
       `<a class="btn btn-sm ${kind === "link" ? "btn-primary" : "btn-ghost"}" href="${href}" target="_blank" rel="noopener">${kind === "github" ? icon("github") : icon("link")}${label}</a>`
     ).join("");
-    card.innerHTML = `
+    const imgHtml = p.img
+      ? `<div class="proj-img"><img src="${p.img}" alt="${p.title} preview" loading="lazy" onerror="this.closest('.proj-img').style.display='none'" /></div>`
+      : "";
+    card.innerHTML = `${imgHtml}
       <div class="proj-body">
         <div class="proj-top">
           <span class="proj-cat">${p.cat}</span>

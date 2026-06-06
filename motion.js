@@ -422,7 +422,7 @@
     const targets = [
       ...$$("#about .stat .n"),
       ...$$(".hs-n"),
-    ].filter(el => /^\d/.test(el.textContent.trim()));
+    ].filter(el => /^\d/.test(el.textContent.trim()) && !el.hasAttribute("data-no-count"));
     if (!targets.length) return;
 
     const obs = new IntersectionObserver((entries, io) => {
