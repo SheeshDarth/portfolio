@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Vercel
+.vercel/
+
+# Screenshots / dev artifacts (not needed in production)
+screenshots/
+uploads/
+preview-*.png
+tweaks-app.jsx
+tweaks-panel.jsx
