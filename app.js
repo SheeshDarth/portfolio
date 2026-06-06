@@ -15,21 +15,22 @@
 
   const BUILD = [
     ["server",  "Local-first AI systems"],
-    ["doc",     "Research & document intelligence tools"],
+    ["doc",     "Research & academic intelligence tools"],
     ["layout",  "Full-stack SaaS platforms"],
     ["flow",    "AI automation workflows"],
     ["shield",  "Privacy & trust tools"],
-    ["heart",   "Health & wellness AI platforms"],
+    ["heart",   "Health & mental wellness AI platforms"],
     ["blocks",  "IoT & blockchain systems"],
+    ["brain",   "EdTech & learning intelligence"],
   ];
 
   const FOCUS_CHIPS = [
-    "Local LLM Hosting", "RAG Chatbots", "Research Workflows",
-    "Academic Intelligence", "Docker Orchestration", "n8n Automation",
-    "Private AI Infrastructure", "Zero-Cost AI Pipelines",
+    "Offline-First Academic AI", "Hybrid Retrieval (BM25 + Chroma)", "Evidence Trails & Citations",
+    "10 Study Modes", "FastAPI + Next.js Workspace", "Ollama Local Generation",
+    "Retrieval Profiles (fast / balanced / precision)", "Local PDF & Document Ingestion",
   ];
 
-  const FILTERS = ["All","AI/ML","SaaS","Local AI","Health AI","Privacy","Blockchain","IoT"];
+  const FILTERS = ["All","AI/ML","SaaS","Local AI","Health AI","Privacy","Blockchain","IoT","EdTech"];
 
   /* ============================================================
      PROJECTS — HOW TO ADD A NEW PROJECT:
@@ -78,18 +79,18 @@
       links: [["GitHub","https://github.com/SheeshDarth/Stress-Detection-System","github"]],
     },
     {
-      title: "NirmiqResearchOS",
-      cat: "Local AI / Infrastructure",
-      cats: ["Local AI","AI/ML"],
+      title: "NirmiqResearchOS — Academic Intelligence System",
+      cat: "Local AI / Academic Intelligence",
+      cats: ["Local AI","AI/ML","EdTech"],
       status: ["building","Actively Building"],
-      desc: "A local-first AI research infrastructure on an RTX 4050 machine for private LLM hosting, RAG chatbots, multi-agent research workflows, content generation, and workflow automation.",
+      desc: "An offline-first, privacy-conscious academic intelligence system with a FastAPI backend, custom Next.js study workspace, and hybrid BM25 + Chroma vector retrieval. Runs entirely on local hardware via Ollama with zero cloud dependency.",
       points: [
-        "Ollama for private local LLM hosting",
-        "n8n for visual workflow automation",
-        "Docker orchestration + Tailscale zero-trust access",
-        "Inference backend for the AGION Wellness Platform",
+        "Hybrid retrieval: BM25 + Chroma vector store + RRF reranking with configurable retrieval profiles (fast / balanced / precision)",
+        "10 study modes: research, exam answer, revision notes, compare concepts, important questions, research paper, and more",
+        "Custom Next.js workspace with Study Thread, Evidence Trail, Citation Jump Links, Compare, and Eval panels",
+        "ChatGPT-style PDF/text/markdown/image upload with content-hash page caching and Ollama local generation",
       ],
-      tags: ["Ollama","Docker","n8n","Tailscale","RAG","Automation"],
+      tags: ["Python","FastAPI","Next.js","SQLite","Chroma","BM25","Ollama","Local AI"],
       links: [["GitHub","https://github.com/SheeshDarth/NirmiqResearchOS","github"]],
     },
     {
@@ -138,14 +139,74 @@
       tags: ["Privacy Tech","Chrome Extension","Express API","LLM"],
       links: [["GitHub","https://github.com/SheeshDarth","github"]],
     },
+    {
+      title: "Anonthera — Anonymous Mental Health Platform",
+      cat: "Health AI / Mental Wellness",
+      cats: ["Health AI","AI/ML"],
+      status: ["done","Completed"],
+      desc: "An anonymous mental health support platform built specifically for Indian students aged 15–21, combining AI companionship, peer matching, and verified helpline resources with a strong emphasis on privacy and safety.",
+      points: [
+        "AI companion powered by Google Gemini for anonymous, judgment-free conversations",
+        "Struggle-based peer matching — connects users anonymously with others facing similar challenges",
+        "Multilingual support: English, Hindi, Tamil, Telugu, and Kannada",
+        "Content filtering, 30-minute session timeouts, and user reporting for platform safety",
+      ],
+      tags: ["React","Vite","Firebase","Gemini API","Framer Motion","Mental Health"],
+      links: [["GitHub","https://github.com/SheeshDarth/Anonthera","github"]],
+    },
+    {
+      title: "PayGuard DQ — Payment Data Quality System",
+      cat: "AI/ML / FinTech / Data Quality",
+      cats: ["AI/ML","SaaS"],
+      status: ["done","Completed"],
+      desc: "A seven-agent automated data quality assessment system for payment transaction datasets. Analyses data across completeness, uniqueness, validity, consistency, timeliness, integrity, and reconciliation dimensions without storing raw transaction data.",
+      points: [
+        "Seven specialised agents: profiler → validator → scorer → explainer → remediator → test-exporter",
+        "Composite quality scores (0–100) with dimension breakdowns and severity-rated issue lists",
+        "Generates exportable test suites and prioritised remediation recommendations",
+        "Privacy-first: raw transaction data is never persisted — only metadata, scores, and aggregates",
+      ],
+      tags: ["Python","FastAPI","Next.js","TypeScript","Docker","Recharts","Multi-Agent"],
+      links: [["GitHub","https://github.com/SheeshDarth/PayGuard-DQ","github"]],
+    },
+    {
+      title: "NirmiqEcho — Offline Voice-to-Text",
+      cat: "Privacy / Local AI / Desktop",
+      cats: ["Privacy","Local AI"],
+      status: ["done","Completed"],
+      desc: "A 100% offline, privacy-first voice-to-text desktop application for Windows using OpenAI Whisper locally. Zero network calls, auto-GPU detection, and real-time transcription injected directly into any active window.",
+      points: [
+        "Fully offline: Whisper medium (CPU) or large-v3 (GPU) — no internet, no accounts, no telemetry",
+        "WebRTC VAD for low-latency Voice Activity Detection and streaming transcription",
+        "Auto-typing: injects transcribed text directly into whichever window is active",
+        "Global F9 hotkey toggle with a compact always-on-top Tkinter UI",
+      ],
+      tags: ["Python","faster-whisper","WebRTC VAD","pyautogui","CUDA","Tkinter","Privacy"],
+      links: [["GitHub","https://github.com/SheeshDarth/NirmiqEcho","github"]],
+    },
+    {
+      title: "NirmiqLearnOS — Personal Learning OS",
+      cat: "EdTech / Local AI",
+      cats: ["EdTech","Local AI"],
+      status: ["building","Actively Building"],
+      desc: "A local-first learning operating system for engineering students who build AI-assisted projects but want to preserve deep understanding. Converts any project, codebase, document, or topic into a structured learning path.",
+      points: [
+        "Project Ingestion + Codebase Understanding — parses and explains any codebase you've vibe-coded",
+        "Explain-Back Mode: proves understanding by forcing the user to narrate code and concepts back",
+        "DSA + Analytical Thinking Trainer integrated alongside exam and interview prep modules",
+        "Local Notes + Memory and a Learning Graph that visualises skill connections over time",
+      ],
+      tags: ["TypeScript","Next.js","SQLite","Drizzle ORM","Tailwind","Local AI","EdTech"],
+      links: [["GitHub","https://github.com/SheeshDarth/NirmiqLearnOS","github"]],
+    },
   ];
 
   const SKILLS = [
-    ["code",   "Programming & Web",           ["Python","Java","C","HTML","CSS","JavaScript","PHP","MySQL","API Integration","Firebase","Git"]],
-    ["brain",  "AI/ML & Research",            ["Scikit-learn","RapidMiner","TensorFlow","PyTorch","LLM Workflows","RAG Pipelines","Computer Vision","Research Implementation","Stress Detection"]],
-    ["server", "Infrastructure & Automation", ["Docker","Ollama","n8n","Tailscale","Local LLM Hosting","Workflow Automation","No-code Platforms","AI Pipelines"]],
-    ["blocks", "IoT & Blockchain",            ["Arduino IDE","Tinkercad","Blynk","IoT Sensors","Blockchain","Smart Contracts","Impact Tracking"]],
-    ["user",   "Professional",                ["Problem Solving","Critical Thinking","Analytical Reasoning","Team Collaboration","Project Management","Adaptability","Research & Implementation"]],
+    ["code",   "Programming & Web",           ["Python","Java","C","TypeScript","JavaScript","HTML","CSS","PHP","MySQL","Next.js","React","FastAPI","Firebase","Git"]],
+    ["brain",  "AI/ML & Research",            ["Scikit-learn","TensorFlow","PyTorch","Whisper","LLM Workflows","RAG Pipelines","BM25","Chroma","Hybrid Retrieval","Computer Vision","Stress Detection","Multi-Agent Systems"]],
+    ["server", "Infrastructure & Automation", ["Docker","Ollama","n8n","Tailscale","SQLite","Drizzle ORM","Local LLM Hosting","Workflow Automation","AI Pipelines","Self-hosted AI"]],
+    ["blocks", "IoT & Blockchain",            ["Arduino IDE","Tinkercad","Blynk","IoT Sensors","Blockchain","Smart Contracts","Impact Tracking","MRV Systems"]],
+    ["user",   "Professional",                ["Problem Solving","Critical Thinking","Analytical Reasoning","Team Collaboration","Project Management","Adaptability","Research & Implementation","Technical Writing"]],
   ];
 
   const SERVICES = [

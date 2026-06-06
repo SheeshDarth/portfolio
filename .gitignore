@@ -22,3 +22,5 @@ uploads/
 preview-*.png
 tweaks-app.jsx
 tweaks-panel.jsx
+
+.vercel
