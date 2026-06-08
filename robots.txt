@@ -1,0 +1,15 @@
+# robots.txt — Siddharth P Portfolio
+# https://siddharth-portfolio-khaki.vercel.app
+
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+# Block crawlers from uploads / dev-only folders
+Disallow: /uploads/
+
+# Sitemap location — submitted to Google Search Console
+Sitemap: https://siddharth-portfolio-khaki.vercel.app/sitemap.xml
+
+# Crawl-delay hint (optional, ignored by Google but respected by others)
+Crawl-delay: 5
