@@ -30,7 +30,7 @@
     "Retrieval Profiles (fast / balanced / precision)", "Local PDF & Document Ingestion",
   ];
 
-  const FILTERS = ["All","AI/ML","SaaS","Local AI","Health AI","Privacy","Blockchain","IoT","EdTech"];
+  const FILTERS = ["All","AI/ML","SaaS","Local AI","Health AI","Privacy","Blockchain","IoT","EdTech","Medical AI"];
 
   /* ============================================================
      PROJECTS — HOW TO ADD A NEW PROJECT:
@@ -208,6 +208,41 @@
       tags: ["TypeScript","Next.js","SQLite","Drizzle ORM","Tailwind","Local AI","EdTech"],
       links: [["GitHub","https://github.com/SheeshDarth/NirmiqLearnOS","github"]],
       img: "assets/projects/nirmiq-learnos/cover.jpg",
+    },
+    {
+      title: "SmartHelm — AI Drowsiness Detection for Riders",
+      cat: "Edge AI / IoT / Rider Safety",
+      cats: ["AI/ML","IoT","Health AI"],
+      status: ["done","Completed"],
+      desc: "An AI-powered drowsiness detection system for motorcycle delivery riders combining edge-only MediaPipe eye analysis with multi-sensor physiological monitoring. Raw video never leaves the device — only 180×72 px eye crops and metadata are transmitted.",
+      points: [
+        "Edge-only AI: MediaPipe FaceLandmarker runs entirely on-device — privacy-first, zero raw video upload",
+        "Multi-sensor fusion: eye-closure detection + heart rate & SpO2 via MAX30102 on Raspberry Pi",
+        "Multi-platform: Raspberry Pi 4 helmet unit, Kotlin Android rider app, web-based fleet dashboard",
+        "Automatic alerting: on-device GPIO buzzer + real-time SMS notifications via MSG91 API",
+      ],
+      tags: ["Python","Flask","MediaPipe","Raspberry Pi","Firebase","Kotlin","Android","Edge AI","IoT"],
+      links: [["GitHub","https://github.com/SheeshDarth/SmartHelm","github"]],
+      img: "assets/projects/smart-helm/cover.jpg",
+    },
+    {
+      title: "Automated Brain Tumour Detection",
+      cat: "Medical AI / Deep Learning",
+      cats: ["AI/ML","Medical AI"],
+      status: ["done","Completed"],
+      desc: "A collaborative deep learning system that classifies brain MRI scans into four categories (glioma, meningioma, no tumour, pituitary) using a hybrid ResNet50 CNN + Vision Transformer pipeline, achieving 98.95% accuracy and 99.92% ROC-AUC on 5-fold cross-validation.",
+      points: [
+        "Hybrid CNN+ViT: ResNet50 extracts spatial features fed into a 6-layer Vision Transformer with 8 attention heads",
+        "98.95% accuracy · 99.92% ROC-AUC on 5-fold cross-validation — with optional radiomics fusion branch",
+        "Grad-CAM spatial attribution overlays for model explainability and clinical interpretability",
+        "Model published on HuggingFace (Zorrojurro/brain-tumor-cnn-vit); Gradio web UI for local inference",
+      ],
+      tags: ["PyTorch","ResNet50","Vision Transformer","Grad-CAM","Medical AI","HuggingFace","Python"],
+      links: [
+        ["HuggingFace","https://huggingface.co/Zorrojurro/brain-tumor-cnn-vit","link"],
+        ["GitHub","https://github.com/SheeshDarth/Automated-Brain-Tumour-Detection","github"],
+      ],
+      img: "assets/projects/brain-tumour/cover.jpg",
     },
   ];
 

@@ -5,7 +5,7 @@
   <!-- Main page -->
   <url>
     <loc>https://siddharth-portfolio-khaki.vercel.app/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://siddharth-portfolio-khaki.vercel.app/" />
@@ -15,31 +15,31 @@
   <!-- Section anchors — helps crawlers understand page structure -->
   <url>
     <loc>https://siddharth-portfolio-khaki.vercel.app/#about</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://siddharth-portfolio-khaki.vercel.app/#projects</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://siddharth-portfolio-khaki.vercel.app/#skills</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://siddharth-portfolio-khaki.vercel.app/#experience</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://siddharth-portfolio-khaki.vercel.app/#contact</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
