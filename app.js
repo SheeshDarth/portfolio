@@ -117,18 +117,24 @@
       cat: "Blockchain / IoT / Climate Tech",
       cats: ["Blockchain","IoT"],
       status: ["ongoing","Ongoing"],
-      desc: "A blue-carbon MRV system using blockchain smart contracts and IoT sensors for verified environmental impact tracking and carbon-credit issuance.",
+      desc: "A decentralized MRV (Measurement, Reporting & Verification) platform for India's blue carbon ecosystems, built on Algorand. Takes a blue-carbon restoration project from submission to on-chain carbon-credit issuance — fully auditable, no intermediaries.",
       points: [
-        "Blockchain-based verification layer",
-        "IoT sensors for environmental data collection",
-        "Focus: blue carbon, MRV & carbon credits",
+        "ARC-4 smart contract (AlgoPy/Puya) manages admin, validator & developer roles on-chain",
+        "AARNA token — a native Algorand Standard Asset minted via inner transactions on approval",
+        "On-chain marketplace: list, escrow (clawback) & buy carbon credits in ALGO",
+        "IPFS-backed evidence trail; built for India's 7,500km coastline mangrove restoration",
       ],
-      tags: ["Blockchain","IoT","Climate Tech","Smart Contracts","MRV"],
+      tags: ["Algorand","AlgoPy","Puya","React","TypeScript","Smart Contracts","IPFS"],
       links: [
-        ["Visit","https://project-aarna-web.vercel.app","link"],
+        ["Visit","https://project-aarna.netlify.app","link"],
         ["GitHub","https://github.com/SheeshDarth/project-aarna","github"],
       ],
       img: "assets/projects/project-aarna/cover.jpg",
+      achievements: [
+        { event: "RIFT '26 Hackathon", org: "PW Institute of Innovation", result: "Semi-Finalist · Team BROCODE", file: "assets/certificates/rift26-semifinalist.jpg" },
+        { event: "AlgoBharat Hackathon", org: "Algorand India", result: "Participant", file: null },
+        { event: "Ideathon 7.0", org: "NMIT Yelahanka", result: "Participant", file: "assets/certificates/ideathon7-participation.pdf" },
+      ],
     },
     {
       title: "Trust Layer — Privacy Risk Analyser",
@@ -176,6 +182,10 @@
       tags: ["Python","FastAPI","Next.js","TypeScript","Docker","Recharts","Multi-Agent"],
       links: [["GitHub","https://github.com/SheeshDarth/PayGuard-DQ","github"]],
       img: "assets/projects/payguard-dq/cover.jpg",
+      achievements: [
+        { event: "VISA 24Hr AI Hackathon", org: "Shaastra, IIT Madras", result: "Top 50", file: "assets/certificates/visa-top50.pdf" },
+        { event: "VISA 24Hr AI Hackathon", org: "Shaastra, IIT Madras", result: "Certificate of Participation", file: "assets/certificates/visa-participation.png" },
+      ],
     },
     {
       title: "NirmiqEcho — Offline Voice-to-Text",
@@ -288,6 +298,14 @@
     const imgHtml = p.img
       ? `<div class="proj-img"><img src="${p.img}" alt="${p.title} preview" loading="lazy" onerror="this.closest('.proj-img').style.display='none'" /></div>`
       : "";
+    const achHtml = (p.achievements && p.achievements.length)
+      ? `<div class="proj-achievements">${p.achievements.map((a) => {
+          const inner = `${icon("award")}<span class="ach-text"><b>${a.result}</b><small>${a.event} · ${a.org}</small></span>`;
+          return a.file
+            ? `<a class="ach-badge" href="${a.file}" target="_blank" rel="noopener" title="View certificate">${inner}</a>`
+            : `<span class="ach-badge no-cert">${inner}</span>`;
+        }).join("")}</div>`
+      : "";
     card.innerHTML = `${imgHtml}
       <div class="proj-body">
         <div class="proj-top">
@@ -297,6 +315,7 @@
         <h3>${p.title}</h3>
         <p class="pdesc">${p.desc}</p>
         <ul>${points}</ul>
+        ${achHtml}
         <div class="proj-tags">${tags}</div>
         <div class="proj-links">${links}</div>
       </div>`;
