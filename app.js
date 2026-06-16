@@ -130,11 +130,6 @@
         ["GitHub","https://github.com/SheeshDarth/project-aarna","github"],
       ],
       img: "assets/projects/project-aarna/cover.jpg",
-      achievements: [
-        { event: "RIFT '26 Hackathon", org: "PW Institute of Innovation", result: "Semi-Finalist · Team BROCODE", file: "assets/certificates/rift26-semifinalist.jpg" },
-        { event: "AlgoBharat Hackathon", org: "Algorand India", result: "Participant", file: null },
-        { event: "Ideathon 7.0", org: "NMIT Yelahanka", result: "Participant", file: "assets/certificates/ideathon7-participation.pdf" },
-      ],
     },
     {
       title: "Trust Layer — Privacy Risk Analyser",
@@ -182,10 +177,6 @@
       tags: ["Python","FastAPI","Next.js","TypeScript","Docker","Recharts","Multi-Agent"],
       links: [["GitHub","https://github.com/SheeshDarth/PayGuard-DQ","github"]],
       img: "assets/projects/payguard-dq/cover.jpg",
-      achievements: [
-        { event: "VISA 24Hr AI Hackathon", org: "Shaastra, IIT Madras", result: "Top 50", file: "assets/certificates/visa-top50.pdf" },
-        { event: "VISA 24Hr AI Hackathon", org: "Shaastra, IIT Madras", result: "Certificate of Participation", file: "assets/certificates/visa-participation.png" },
-      ],
     },
     {
       title: "NirmiqEcho — Offline Voice-to-Text",
@@ -273,6 +264,48 @@
     ["blocks", "IoT + Blockchain Prototypes", "Developing experimental systems that combine IoT data, blockchain verification, and impact tracking."],
   ];
 
+  const HACKATHONS = [
+    {
+      event: "RIFT '26 Hackathon",
+      org: "PW Institute of Innovation",
+      date: "Feb 2026",
+      result: "Semi-Finalist",
+      project: "Project Aarna",
+      projectLink: "https://github.com/SheeshDarth/project-aarna",
+      certs: [["View Certificate", "assets/certificates/rift26-semifinalist.jpg"]],
+    },
+    {
+      event: "AlgoBharat Hackathon",
+      org: "Algorand Foundation",
+      date: "2026",
+      result: "Participant",
+      project: "Project Aarna",
+      projectLink: "https://github.com/SheeshDarth/project-aarna",
+      certs: [],
+    },
+    {
+      event: "Ideathon 7.0",
+      org: "Inter-College Ideathon",
+      date: "2026",
+      result: "Participant",
+      project: "Project Aarna",
+      projectLink: "https://github.com/SheeshDarth/project-aarna",
+      certs: [["View Certificate", "assets/certificates/ideathon7-participation.pdf"]],
+    },
+    {
+      event: "VISA 24Hr AI Hackathon",
+      org: "Shaastra, IIT Madras",
+      date: "Jan 2026",
+      result: "Top 50",
+      project: "PayGuard DQ",
+      projectLink: "https://github.com/SheeshDarth/PayGuard-DQ",
+      certs: [
+        ["Top 50 Certificate", "assets/certificates/visa-top50.pdf"],
+        ["Participation Certificate", "assets/certificates/visa-participation.png"],
+      ],
+    },
+  ];
+
   /* ---- Render helpers ---- */
 
   function renderBuild() {
@@ -298,14 +331,6 @@
     const imgHtml = p.img
       ? `<div class="proj-img"><img src="${p.img}" alt="${p.title} preview" loading="lazy" onerror="this.closest('.proj-img').style.display='none'" /></div>`
       : "";
-    const achHtml = (p.achievements && p.achievements.length)
-      ? `<div class="proj-achievements">${p.achievements.map((a) => {
-          const inner = `${icon("award")}<span class="ach-text"><b>${a.result}</b><small>${a.event} · ${a.org}</small></span>`;
-          return a.file
-            ? `<a class="ach-badge" href="${a.file}" target="_blank" rel="noopener" title="View certificate">${inner}</a>`
-            : `<span class="ach-badge no-cert">${inner}</span>`;
-        }).join("")}</div>`
-      : "";
     card.innerHTML = `${imgHtml}
       <div class="proj-body">
         <div class="proj-top">
@@ -315,7 +340,6 @@
         <h3>${p.title}</h3>
         <p class="pdesc">${p.desc}</p>
         <ul>${points}</ul>
-        ${achHtml}
         <div class="proj-tags">${tags}</div>
         <div class="proj-links">${links}</div>
       </div>`;
@@ -365,6 +389,26 @@
     SERVICES.forEach(([ic, title, desc], i) => {
       h.appendChild(el("div", "card svc-card reveal d" + ((i % 3) + 1),
         `<span class="svc-num">0${i + 1}</span><span class="svc-ic">${icon(ic)}</span><h3>${title}</h3><p>${desc}</p>`));
+    });
+  }
+
+  function renderHackathons() {
+    const h = $("#hackGrid"); if (!h) return;
+    HACKATHONS.forEach((hk, i) => {
+      const certs = hk.certs.length
+        ? `<div class="hack-certs">${hk.certs.map(([label, file]) =>
+            `<a class="btn btn-sm btn-ghost" href="${file}" target="_blank" rel="noopener">${icon("award")}${label}</a>`).join("")}</div>`
+        : "";
+      h.appendChild(el("div", "card hack-card reveal d" + ((i % 4) + 1), `
+        <div class="hack-top">
+          <span class="hack-ic">${icon("award")}</span>
+          <span class="hack-result">${hk.result}</span>
+        </div>
+        <h3>${hk.event}</h3>
+        <p class="hack-meta">${hk.org} · ${hk.date}</p>
+        <a class="hack-project" href="${hk.projectLink}" target="_blank" rel="noopener">${icon("link")}${hk.project}</a>
+        ${certs}
+      `));
     });
   }
 
@@ -462,6 +506,7 @@
     renderFocusChips();
     renderFilters();
     renderProjects("All");
+    renderHackathons();
     renderSkills();
     renderServices();
     initNav();
