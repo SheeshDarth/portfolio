@@ -93,7 +93,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
 <script>document.documentElement.classList.add('js')</script>
-<link rel="stylesheet" href="styles.css?v=13" />
+<link rel="stylesheet" href="styles.css?v=14" />
 
 <!-- ═══════════════════════════════════════════════════
      1+2 · JSON-LD STRUCTURED DATA
@@ -618,14 +618,14 @@
       </div>
       <form class="card form reveal d2" id="contactForm" novalidate>
         <div class="form-row">
-          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" placeholder="Your name" /><span class="err"></span></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@email.com" /><span class="err"></span></div>
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" /><span class="err"></span></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" /><span class="err"></span></div>
         </div>
         <div class="field"><label for="f-subject">Subject</label><input id="f-subject" name="subject" type="text" placeholder="What's this about?" /><span class="err"></span></div>
         <div class="field"><label for="f-message">Message</label><textarea id="f-message" name="message" placeholder="Tell me about the project, role, or idea…"></textarea><span class="err"></span></div>
         <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%; justify-content:center;">Send Message <svg><use href="#i-arrow"/></svg></button>
         <p class="form-note">Connect Formspree / EmailJS to this form to deliver messages.</p>
-        <div class="form-status" id="formStatus"></div>
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
       </form>
     </div>
   </div>

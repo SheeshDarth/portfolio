@@ -16,7 +16,7 @@
   /* Text — cool starlight white */
   --text:   #E6ECF8;
   --text-2: #7E90B0;
-  --text-3: #4E5A70;
+  --text-3: #6A7A95;
 
   /* Accent — stellar cyan + nebula violet (Hubble palette) */
   --accent:      #46D2EE;
@@ -483,6 +483,7 @@ section { position: relative; }
   background: var(--accent-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
   display: inline-block; /* needed for background-clip */
   min-width: 2ch; /* stable layout during counter animation */
+  font-variant-numeric: tabular-nums; font-feature-settings: "tnum";
 }
 .stat .l { font-size: 12.5px; color: var(--text-2); margin-top: 4px; }
 
@@ -783,6 +784,7 @@ footer.site { border-top: 1px solid var(--hair); padding-block: 36px; margin-top
 .hs-n {
   display: inline-block; /* stable during counter */
   min-width: 2ch;
+  font-variant-numeric: tabular-nums; font-feature-settings: "tnum";
   font-family: var(--font-head); font-size: 22px; font-weight: 800;
   letter-spacing: -0.025em; color: var(--accent);
 }
@@ -1044,13 +1046,30 @@ a.accent-link:hover::after { transform: scaleX(1); }
 /* ============================================================
    REDUCED MOTION — disable all looping / decorative animation
    ============================================================ */
+/* ============================================================
+   GRADIENT-TEXT FLOW — subtle living sheen on heading accents
+   ============================================================ */
+.grad-text {
+  background: linear-gradient(115deg, var(--accent), var(--accent-2), var(--accent));
+  background-size: 220% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: gradFlow 9s ease-in-out infinite;
+}
+@keyframes gradFlow {
+  0%, 100% { background-position: 0% center; }
+  50%      { background-position: 100% center; }
+}
+
+/* ============================================================
+   REDUCED MOTION — disable all looping / decorative animation
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   .hero-photo-card, .card.proj.featured,
   .hero-badge, .hero-badge.in,
   .hero-badge .pulse, .photo-tag .live,
   .proj-status.building .d, .tl-item:first-child::before,
   .hero-scroll span, .arch .flow, .marquee-track,
-  .focus-card::after {
+  .focus-card::after, .grad-text {
     animation: none !important;
   }
 }
