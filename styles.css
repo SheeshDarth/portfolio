@@ -964,6 +964,98 @@ a.accent-link::after {
 a.accent-link:hover::after { transform: scaleX(1); }
 
 /* ============================================================
+   KEYBOARD FOCUS — visible, on-brand ring (a11y · skill priority #1)
+   ============================================================ */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.btn:focus-visible, .filter:focus-visible, .chip:focus-visible,
+.nav-links a:focus-visible, .mobile-menu a:focus-visible,
+.icon-btn:focus-visible, .to-top:focus-visible, .hamburger:focus-visible,
+.hack-project:focus-visible, .ci-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+/* Text fields already show an accent box-shadow ring on focus */
+.field input:focus-visible, .field textarea:focus-visible { outline: none; }
+
+/* ============================================================
+   ANIMATED CONIC GLOW BORDER  (21st.dev / magic-inspired · vanilla CSS)
+   A slow cyan→violet light arc travels the border of the two key
+   visual anchors — the hero portrait and the featured project card.
+   ============================================================ */
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes spinBorder { to { --angle: 360deg; } }
+
+@supports (background: conic-gradient(from 0deg, red, blue)) {
+  .hero-photo-card {
+    border: 1.5px solid transparent;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      conic-gradient(from var(--angle),
+        rgba(70,210,238,0.10) 0deg,
+        var(--accent)         60deg,
+        var(--accent-2)      120deg,
+        rgba(70,210,238,0.08) 200deg,
+        rgba(70,210,238,0.10) 360deg) border-box;
+    animation: spinBorder 7s linear infinite;
+  }
+  /* keep the conic ring visible on hover (no solid border painted over it) */
+  .hero-photo-card:hover { border-color: transparent; }
+
+  .card.proj.featured {
+    border: 1.5px solid transparent;
+    background:
+      linear-gradient(140deg, rgba(70,210,238,0.030), rgba(10,14,24,0.82), rgba(152,120,255,0.020)) padding-box,
+      conic-gradient(from var(--angle),
+        rgba(70,210,238,0.10) 0deg,
+        var(--accent)         60deg,
+        var(--accent-2)      120deg,
+        rgba(70,210,238,0.08) 200deg,
+        rgba(70,210,238,0.10) 360deg) border-box;
+    animation: featuredGlow 4s ease-in-out infinite, spinBorder 7s linear infinite;
+  }
+  .card.proj.featured:hover { animation: spinBorder 7s linear infinite; }
+}
+
+/* ============================================================
+   HACKATHONS — gold-accent identity matching the award theme
+   ============================================================ */
+.hack-card::before {
+  background: radial-gradient(380px 180px at var(--mx,75%) -10%, rgba(240,179,90,0.09), transparent 65%);
+}
+.hack-card::after {
+  background: linear-gradient(115deg, transparent 30%, rgba(240,179,90,0.07) 50%, transparent 70%);
+}
+.hack-card:hover {
+  border-color: rgba(240,179,90,0.26);
+  box-shadow: 0 32px 64px -32px rgba(0,0,0,0.95),
+              0 0 0 1px rgba(240,179,90,0.08),
+              0 0 40px -20px rgba(240,179,90,0.14);
+}
+.hack-ic { transition: transform .28s cubic-bezier(.16,1,.3,1), background .25s, border-color .25s; }
+.hack-card:hover .hack-ic { transform: scale(1.08); background: rgba(240,179,90,0.12); border-color: rgba(240,179,90,0.45); }
+
+/* ============================================================
+   REDUCED MOTION — disable all looping / decorative animation
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo-card, .card.proj.featured,
+  .hero-badge, .hero-badge.in,
+  .hero-badge .pulse, .photo-tag .live,
+  .proj-status.building .d, .tl-item:first-child::before,
+  .hero-scroll span, .arch .flow, .marquee-track,
+  .focus-card::after {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1080px) {

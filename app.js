@@ -343,11 +343,17 @@
         <div class="proj-tags">${tags}</div>
         <div class="proj-links">${links}</div>
       </div>`;
-    card.addEventListener("pointermove", (e) => {
+    return card;
+  }
+
+  /* Pointer-follow spotlight for every .card (projects, skills, services, hackathons) */
+  function initCardSpotlight() {
+    document.addEventListener("pointermove", (e) => {
+      const card = e.target.closest && e.target.closest(".card");
+      if (!card) return;
       const r = card.getBoundingClientRect();
       card.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100) + "%");
-    });
-    return card;
+    }, { passive: true });
   }
 
   function renderProjects(filter = "All") {
@@ -513,6 +519,7 @@
     initReveal();
     initForm();
     initTop();
+    initCardSpotlight();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
