@@ -439,7 +439,7 @@ section { position: relative; }
 }
 .card::before {
   content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-  background: radial-gradient(380px 180px at var(--mx,75%) -10%, rgba(70,210,238,0.07), transparent 65%);
+  background: radial-gradient(440px 320px at var(--mx,50%) var(--my,0%), rgba(70,210,238,0.10), transparent 60%);
   opacity: 0; transition: opacity .35s;
 }
 .card:hover {
@@ -1029,7 +1029,7 @@ a.accent-link:hover::after { transform: scaleX(1); }
    HACKATHONS — gold-accent identity matching the award theme
    ============================================================ */
 .hack-card::before {
-  background: radial-gradient(380px 180px at var(--mx,75%) -10%, rgba(240,179,90,0.09), transparent 65%);
+  background: radial-gradient(440px 320px at var(--mx,50%) var(--my,0%), rgba(240,179,90,0.12), transparent 60%);
 }
 .hack-card::after {
   background: linear-gradient(115deg, transparent 30%, rgba(240,179,90,0.07) 50%, transparent 70%);

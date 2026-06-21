@@ -346,14 +346,35 @@
     return card;
   }
 
-  /* Pointer-follow spotlight for every .card (projects, skills, services, hackathons) */
+  /* Pointer-follow glare + subtle 3D tilt for every .card and the hero portrait.
+     Tilt is set inline so it beats the reveal system's `.reveal.in { transform:none }`. */
   function initCardSpotlight() {
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const fine   = matchMedia("(pointer: fine)").matches;
+    const doTilt = !reduce && fine;
+    const SEL = ".card:not(.form), .hero-photo-card";
+    let active = null;
+    const reset = (el) => { el.style.transform = ""; el.style.transition = ""; };
     document.addEventListener("pointermove", (e) => {
-      const card = e.target.closest && e.target.closest(".card");
+      const card = e.target.closest ? e.target.closest(SEL) : null;
+      if (card !== active) { if (active) reset(active); active = card; }
       if (!card) return;
       const r = card.getBoundingClientRect();
-      card.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100) + "%");
+      const nx = (e.clientX - r.left) / r.width;
+      const ny = (e.clientY - r.top)  / r.height;
+      card.style.setProperty("--mx", (nx * 100) + "%");
+      card.style.setProperty("--my", (ny * 100) + "%");
+      if (doTilt) {
+        const isHero = card.classList.contains("hero-photo-card");
+        const max  = isHero ? 3 : 3.5;          /* tasteful, low magnitude */
+        const lift = isHero ? -4 : -6;
+        const rx = ((ny - 0.5) * max).toFixed(2);   /* rotateX from vertical position */
+        const ry = ((0.5 - nx) * max).toFixed(2);   /* rotateY from horizontal position */
+        card.style.transition = "transform .14s ease-out";
+        card.style.transform  = `perspective(1100px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(${lift}px)`;
+      }
     }, { passive: true });
+    window.addEventListener("blur", () => { if (active) { reset(active); active = null; } });
   }
 
   function renderProjects(filter = "All") {

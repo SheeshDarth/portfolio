@@ -378,15 +378,16 @@
     }
   }
 
-  /* ── Magnetic buttons ────────────────────────────────────── */
+  /* ── Magnetic buttons (primary, ghost, nav icons, back-to-top) ─ */
   function initMagnetic() {
     if (reduce || !fine) return;
-    $$(".btn-primary").forEach(b => {
+    $$(".btn, .icon-btn, .to-top").forEach(b => {
+      const strength = b.classList.contains("icon-btn") ? 4 : 5; /* subtle */
       b.addEventListener("pointermove", e => {
         const r = b.getBoundingClientRect();
         const x = (e.clientX - r.left - r.width  / 2) / r.width;
         const y = (e.clientY - r.top  - r.height / 2) / r.height;
-        b.style.transform = `translate(${x * 6}px,${y * 6}px)`;
+        b.style.transform = `translate(${x * strength}px,${y * strength}px)`;
       }, { passive: true });
       b.addEventListener("pointerleave", () => { b.style.transform = ""; });
     });
