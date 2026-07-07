@@ -451,8 +451,19 @@
     requestAnimationFrame(masterLoop);
   }
 
+  /* ── Page-load intro: hide after the reveal animation ────── */
+  function initIntro() {
+    const intro = document.getElementById("intro");
+    if (!intro) return;
+    if (reduce) { intro.remove(); return; }
+    const hide = () => { intro.style.display = "none"; };
+    intro.addEventListener("animationend", e => { if (e.animationName === "introLift") hide(); });
+    setTimeout(hide, 2400); /* safety net if animationend is missed */
+  }
+
   /* ── Init ────────────────────────────────────────────────── */
   function init() {
+    initIntro();
     buildMarquee();
     initSmoothLinks();
     initCursor();
