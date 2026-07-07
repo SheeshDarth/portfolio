@@ -129,7 +129,7 @@
         ["Visit","https://project-aarna.netlify.app","link"],
         ["GitHub","https://github.com/SheeshDarth/project-aarna","github"],
       ],
-      img: "assets/projects/project-aarna/cover.jpg",
+      img: "assets/projects/project-aarna/cover.png",
     },
     {
       title: "Trust Layer — Privacy Risk Analyser",
@@ -243,7 +243,7 @@
         ["HuggingFace","https://huggingface.co/Zorrojurro/brain-tumor-cnn-vit","link"],
         ["GitHub","https://github.com/SheeshDarth/Automated-Brain-Tumour-Detection","github"],
       ],
-      img: "assets/projects/brain-tumour/cover.jpg",
+      img: "assets/projects/brain-tumour/cover.png",
     },
   ];
 
@@ -328,9 +328,14 @@
     const links  = p.links.map(([label, href, kind]) =>
       `<a class="btn btn-sm ${kind === "link" ? "btn-primary" : "btn-ghost"}" href="${href}" target="_blank" rel="noopener">${kind === "github" ? icon("github") : icon("link")}${label}</a>`
     ).join("");
-    const imgHtml = p.img
-      ? `<div class="proj-img"><img src="${p.img}" alt="${p.title} preview" loading="lazy" onerror="this.closest('.proj-img').style.display='none'" /></div>`
+    const base = p.title.replace(/\s*[—–-].*$/, "").replace(/([a-z])([A-Z])/g, "$1 $2").trim();
+    const words = base.split(/\s+/);
+    const initials = (words.length > 1 ? words.slice(0, 2).map((w) => w[0]).join("") : base.slice(0, 2)).toUpperCase();
+    const hasShot = p.img && /\.png$/i.test(p.img);
+    const shot = hasShot
+      ? `<img class="pc-shot" src="${p.img}" alt="${p.title} screenshot" loading="lazy" onerror="this.remove()" />`
       : "";
+    const imgHtml = `<div class="proj-cover"><span class="pc-mono">${initials}</span><span class="pc-tag">${p.cat}</span>${shot}</div>`;
     card.innerHTML = `${imgHtml}
       <div class="proj-body">
         <div class="proj-top">
