@@ -89,11 +89,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preload" as="image" href="assets/siddharth.jpeg?v=8" fetchpriority="high" />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Press+Start+2P&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
 
 <script>document.documentElement.classList.add('js')</script>
-<link rel="stylesheet" href="styles.css?v=18" />
+<link rel="stylesheet" href="styles.css?v=19" />
 
 <!-- ═══════════════════════════════════════════════════
      1+2 · JSON-LD STRUCTURED DATA
@@ -319,23 +319,10 @@
 <body>
 
 <div class="bg-field"></div>
-<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bgCanvas" aria-hidden="true"></canvas>
 <div class="bg-grid"></div>
-<div class="bg-noise" aria-hidden="true"></div>
-<div class="bg-vignette" aria-hidden="true"></div>
-
-<!-- Page-load intro reveal (CSS-driven; auto-completes even without JS) -->
-<div class="intro" id="intro" aria-hidden="true">
-  <div class="intro-inner">
-    <span class="mark">SP</span>
-    <span class="word">Siddharth&nbsp;P<em>.</em></span>
-  </div>
-</div>
 
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-label" id="cursorLabel"></span></div>
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
 <!-- ================= ICON SPRITE ================= -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -411,61 +398,49 @@
 
 <!-- ================= HERO ================= -->
 <header class="hero" id="home">
-  <canvas id="heroCanvas" aria-hidden="true"></canvas>
   <div class="wrap">
-    <div class="hero-inner">
-
-      <!-- Full-width band: badge + oversized name -->
-      <div class="hero-band">
-        <div class="hero-badge reveal"><span class="pulse"></span>AI/ML Student · Systems Builder · Bengaluru</div>
-        <h1 class="hero-name">
-          <span class="hn-first reveal d1">Siddharth</span>
-          <span class="hn-last reveal d1">P<em>.</em></span>
-        </h1>
+    <div class="hero-top reveal">
+      <div class="hero-badge"><span class="pulse"></span>AI/ML Student · Systems Builder · Bengaluru</div>
+    </div>
+    <div class="hero-grid">
+      <div class="term-window reveal d1">
+        <div class="term-bar"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span><span class="tbar-title">siddharth@portfolio: ~</span></div>
+        <div class="term-body" id="termBody">
+          <div class="tline tprompt">$ whoami</div>
+          <h1 class="tline tout">Siddharth P — AI/ML systems builder</h1>
+          <div class="tline tcomment"># Bengaluru · BNMIT B.E. AI/ML '27 · open to internships</div>
+          <div class="tline">&nbsp;</div>
+          <div class="tline tprompt">$ cat focus.txt</div>
+          <div class="tline tout">LLM fine-tuning safety · explainable space mission-assurance</div>
+          <div class="tline tout">offline-first research intelligence · privacy-conscious systems</div>
+          <div class="tline">&nbsp;</div>
+          <div class="tline tprompt">$ open ./projects<span class="caret"></span></div>
+        </div>
       </div>
-
-      <!-- Two-column: description left · photo right -->
-      <div class="hero-content">
-
-        <div class="hero-text">
-          <div class="hero-rule reveal d2"></div>
-          <p class="hero-sub reveal d2">Building <strong>LLM fine-tuning safety</strong>, explainable <strong>space mission-assurance AI</strong>, offline-first academic intelligence, and privacy-conscious systems. Currently at <strong>BNMIT</strong>, shipping real products.</p>
-          <div class="hero-cta reveal d3">
-            <a href="#projects" class="btn btn-primary" data-cursor="View">View Projects <svg><use href="#i-arrow"/></svg></a>
-            <a href="#contact" class="btn" data-cursor="Say hi">Contact Me</a>
-          </div>
-          <div class="hero-mini reveal d4">
-            <a href="https://github.com/SheeshDarth" target="_blank" rel="noopener me" class="btn btn-ghost btn-sm"><svg><use href="#i-github"/></svg>GitHub</a>
-            <a href="https://linkedin.com/in/siddharth-p-7bb185285/" target="_blank" rel="noopener me" class="btn btn-ghost btn-sm"><svg><use href="#i-linkedin"/></svg>LinkedIn</a>
-            <a href="assets/Siddharth-P-Resume.pdf" download class="btn btn-ghost btn-sm"><svg><use href="#i-download"/></svg>Resume</a>
+      <div class="hero-side">
+        <div class="hud-panel reveal d2">
+          <div class="hud-title">// system readout</div>
+          <div class="readouts">
+            <div class="ro"><div class="l">Projects</div><div class="v hs-n">14</div></div>
+            <div class="ro"><div class="l">Shipped live</div><div class="v hs-n">3</div></div>
+            <div class="ro"><div class="l">Internships</div><div class="v hs-n">1</div></div>
+            <div class="ro"><div class="l">Graduation</div><div class="v" data-no-count>2027</div></div>
           </div>
         </div>
-
-        <div class="hero-visual reveal d2">
-          <div class="hero-photo-card">
-            <img src="assets/siddharth.jpeg?v=8" alt="Siddharth P — AI Systems Builder" loading="eager" fetchpriority="high" width="400" height="500" />
-            <div class="photo-tag"><span class="live"></span>Building&nbsp;<b>ORIGINX-T</b></div>
-          </div>
-          <div class="hero-stats">
-            <div class="hs-item">
-              <span class="hs-n">3</span>
-              <span class="hs-l">Shipped &amp; live</span>
-            </div>
-            <div class="hs-item">
-              <span class="hs-n">1</span>
-              <span class="hs-l">ML Internship</span>
-            </div>
-            <div class="hs-item">
-              <span class="hs-n">2027</span>
-              <span class="hs-l">B.E. AI/ML</span>
-            </div>
-          </div>
+        <div class="hud-panel reveal d3">
+          <div class="hud-title">// now building</div>
+          <div class="mono" style="font-size:13px;line-height:1.7">OriginX-T<br><span style="color:var(--dim)">LLM fine-tuning safety</span> <span style="color:#FBBF24">◐ in dev</span></div>
         </div>
-
       </div>
     </div>
+    <div class="hero-cta reveal d3">
+      <a href="#projects" class="btn btn-primary"><svg><use href="#i-arrow"/></svg>View Projects</a>
+      <a href="#contact" class="btn">Contact Me</a>
+      <a href="https://github.com/SheeshDarth" target="_blank" rel="noopener me" class="btn btn-ghost"><svg><use href="#i-github"/></svg>GitHub</a>
+      <a href="assets/Siddharth-P-Resume.pdf" download class="btn btn-ghost"><svg><use href="#i-download"/></svg>Resume</a>
+    </div>
   </div>
-  <div class="hero-scroll reveal d4" aria-hidden="true"><span></span>Scroll</div>
+  <div class="hero-scroll reveal d4" aria-hidden="true"><span></span>scroll</div>
 </header>
 
 <!-- ================= TECH MARQUEE ================= -->
@@ -482,8 +457,14 @@
     </div>
     <div class="about-grid">
       <div class="reveal">
-        <p>Siddharth P is an Artificial Intelligence &amp; Machine Learning engineering student at <strong>BNM Institute of Technology</strong> with a strong focus on building practical AI systems. His work spans LLM fine-tuning dataset forensics, explainable space mission-assurance systems, AI-powered candidate verification, automated medical imaging with Vision Transformers, offline academic intelligence, anonymous mental wellness platforms, edge AI rider safety, payment data quality, local voice AI, privacy tools, and blockchain-enabled environmental impact tracking.</p>
-        <p>My goal is to build AI systems that solve real problems — in research, education, automation, privacy, and intelligent workflows. I combine AI models, automation tools, full-stack development, local LLMs, and infrastructure thinking to create products that are <strong>practical, scalable, and meaningful</strong>.</p>
+        <div class="term-window">
+          <div class="term-bar"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span><span class="tbar-title">~/about.txt</span></div>
+          <div class="term-body">
+            <div class="tline tprompt">$ cat about.txt</div>
+            <p class="tout" style="font-family:var(--body);margin-top:10px">I'm an <strong>AI &amp; Machine Learning</strong> engineering student at <strong>BNM Institute of Technology</strong>, and I build practical AI systems end-to-end. My work spans LLM fine-tuning dataset forensics, explainable space mission-assurance, AI-powered candidate verification, medical imaging with Vision Transformers, offline academic intelligence, anonymous mental-wellness platforms, edge-AI rider safety, payment data quality, local voice AI, privacy tools, and blockchain-based environmental impact tracking.</p>
+            <p class="tout" style="font-family:var(--body);margin-top:12px;color:var(--dim)">I like taking a hard research problem all the way to something real people can use — combining models, automation, full-stack development, local LLMs, and infrastructure into products that are <strong style="color:var(--text)">practical, scalable, and meaningful</strong>.</p>
+          </div>
+        </div>
         <div class="stat-row">
           <div class="stat reveal d1"><div class="n">14</div><div class="l">Projects built · 3 shipped live</div></div>
           <div class="stat reveal d2"><div class="n">1</div><div class="l">AI/ML research internship</div></div>
@@ -677,7 +658,18 @@
   </div>
 </footer>
 
-<script src="app.js?v=16"></script>
-<script src="motion.js?v=13"></script>
+<!-- ================= MASCOT GUIDE ================= -->
+<div class="mascot" id="mascot" aria-live="polite">
+  <div class="mascot-av"><img src="assets/siddharth.jpeg?v=8" alt="Pixel-art avatar of Siddharth, your guide" width="74" height="74" /></div>
+  <div class="mascot-bubble">
+    <button class="mascot-close" id="mascotClose" type="button" aria-label="Hide the guide">×</button>
+    <span class="who">SIDDHARTH.EXE</span>
+    <span class="msg" id="mascotMsg">Hey — I'm Siddharth. Scroll down, or jump to a section and I'll narrate.</span>
+  </div>
+</div>
+<button class="mascot-reopen" id="mascotReopen" type="button" aria-label="Show the guide"><img src="assets/siddharth.jpeg?v=8" alt="" width="52" height="52" /></button>
+
+<script src="app.js?v=17"></script>
+<script src="motion.js?v=14"></script>
 </body>
 </html>
