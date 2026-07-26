@@ -352,35 +352,31 @@
     FOCUS_CHIPS.forEach((c) => h.appendChild(el("span", "chip", c)));
   }
 
-  function projCard(p, featured) {
-    const card = el("article", "card proj reveal" + (featured ? " featured" : ""));
-    card.dataset.cats = p.cats.join(",");
+  /* Numbered index row — editorial layout with Mission-Control status chip. */
+  function projCard(p, i) {
+    const row = el("div", "prow reveal");
+    row.dataset.cats = p.cats.join(",");
+    const num    = String(i + 1).padStart(2, "0");
     const points = p.points.map((x) => `<li>${x}</li>`).join("");
     const tags   = p.tags.map((t) => `<span class="t">${t}</span>`).join("");
     const links  = p.links.map(([label, href, kind]) =>
       `<a class="btn btn-sm ${kind === "link" ? "btn-primary" : "btn-ghost"}" href="${href}" target="_blank" rel="noopener">${kind === "github" ? icon("github") : icon("link")}${label}</a>`
     ).join("");
-    const base = p.title.replace(/\s*[—–-].*$/, "").replace(/([a-z])([A-Z])/g, "$1 $2").trim();
-    const words = base.split(/\s+/);
-    const initials = (words.length > 1 ? words.slice(0, 2).map((w) => w[0]).join("") : base.slice(0, 2)).toUpperCase();
-    const hasShot = p.img && /\.png$/i.test(p.img);
-    const shot = hasShot
-      ? `<img class="pc-shot" src="${p.img}" alt="${p.title} screenshot" loading="lazy" onerror="this.remove()" />`
-      : "";
-    const imgHtml = `<div class="proj-cover"><span class="pc-mono">${initials}</span><span class="pc-tag">${p.cat}</span>${shot}</div>`;
-    card.innerHTML = `${imgHtml}
-      <div class="proj-body">
-        <div class="proj-top">
-          <span class="proj-cat">${p.cat}</span>
+    row.innerHTML = `
+      <div class="prow-num">${num}</div>
+      <div class="prow-body">
+        <div class="prow-top">
+          <div><span class="prow-cat">${p.cat}</span><h3>${p.title}</h3></div>
           <span class="proj-status ${p.status[0]}"><span class="d"></span>${p.status[1]}</span>
         </div>
-        <h3>${p.title}</h3>
-        <p class="pdesc">${p.desc}</p>
-        <ul>${points}</ul>
-        <div class="proj-tags">${tags}</div>
-        <div class="proj-links">${links}</div>
+        <p class="prow-desc">${p.desc}</p>
+        <ul class="prow-points">${points}</ul>
+        <div class="prow-foot">
+          <div class="prow-tags">${tags}</div>
+          <div class="prow-links">${links}</div>
+        </div>
       </div>`;
-    return card;
+    return row;
   }
 
   /* Pointer-follow glare + subtle 3D tilt for every .card and the hero portrait.
@@ -419,7 +415,7 @@
     grid.innerHTML = "";
     const filtered = PROJECTS.filter((p) => filter === "All" || p.cats.includes(filter));
     filtered.forEach((p, i) => {
-      const c = projCard(p, i === 0);
+      const c = projCard(p, i);
       c.classList.add("d" + ((i % 4) + 1));
       grid.appendChild(c);
       requestAnimationFrame(() => requestAnimationFrame(() => c.classList.add("in")));
@@ -577,7 +573,6 @@
     initReveal();
     initForm();
     initTop();
-    initCardSpotlight();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
