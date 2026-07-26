@@ -33,9 +33,10 @@
     const track = $("#marqueeTrack");
     if (!track) return;
     const items = [
-      "Local-First AI","RAG Pipelines","Ollama","Docker","n8n Automation",
-      "Computer Vision","LLM Workflows","Full-Stack SaaS","Privacy Tooling",
-      "Blockchain","IoT","Research Intelligence","Tailscale","Edge AI",
+      "Local-First AI","RAG Pipelines","Ollama","LLM Safety","Docker",
+      "Computer Vision","Vision Transformers","LLM Workflows","Full-Stack SaaS",
+      "Explainable AI","Privacy Tooling","Space Systems","Anomaly Detection",
+      "Blockchain","IoT","Research Intelligence","Edge AI",
     ];
     const makeSet = () => {
       const f = document.createDocumentFragment();
