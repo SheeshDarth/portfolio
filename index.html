@@ -93,7 +93,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
 
 <script>document.documentElement.classList.add('js')</script>
-<link rel="stylesheet" href="styles.css?v=19" />
+<link rel="stylesheet" href="styles.css?v=20" />
 
 <!-- ═══════════════════════════════════════════════════
      1+2 · JSON-LD STRUCTURED DATA
@@ -694,18 +694,25 @@
   </div>
 </footer>
 
-<!-- ================= MASCOT GUIDE ================= -->
+<!-- ================= MASCOT GUIDE + AGENT CHAT ================= -->
 <div class="mascot" id="mascot" aria-live="polite">
   <div class="mascot-av"><img src="assets/siddharth.jpeg?v=8" alt="Pixel-art avatar of Siddharth, your guide" width="74" height="74" /></div>
   <div class="mascot-bubble">
     <button class="mascot-close" id="mascotClose" type="button" aria-label="Hide the guide">×</button>
     <span class="who">SIDDHARTH.EXE</span>
-    <span class="msg" id="mascotMsg">Hey — I'm Siddharth. Scroll down, or jump to a section and I'll narrate.</span>
+    <span class="msg" id="mascotMsg">Hey — I'm Siddharth. Scroll down and I'll narrate, or ask me anything below.</span>
+    <div class="agent-log" id="agentLog" aria-live="polite"></div>
+    <form class="agent-form" id="agentForm" autocomplete="off">
+      <input id="agentInput" type="text" placeholder="Ask about a project, skill, or say hi…" maxlength="600" aria-label="Ask Siddharth's agent a question" />
+      <button id="agentSend" type="submit" aria-label="Send"><svg><use href="#i-arrow"/></svg></button>
+    </form>
   </div>
 </div>
 <button class="mascot-reopen" id="mascotReopen" type="button" aria-label="Show the guide"><img src="assets/siddharth.jpeg?v=8" alt="" width="52" height="52" /></button>
 
-<script src="app.js?v=18"></script>
+<script src="data.js?v=1"></script>
+<script src="app.js?v=19"></script>
 <script src="motion.js?v=14"></script>
+<script src="agent.js?v=1"></script>
 </body>
 </html>

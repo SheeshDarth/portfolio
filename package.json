@@ -1,0 +1,7 @@
+{
+  "name": "siddharth-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static portfolio site + a small Vercel serverless function (api/chat.js) for the site agent. No build step, no dependencies -- api/chat.js uses only the Node runtime's built-in fetch.",
+  "engines": { "node": "24.x" }
+}
