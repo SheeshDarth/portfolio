@@ -10,22 +10,22 @@
    - Actions are function-calls the model MAY request; every single one
      is re-validated server-side against real data before being sent to
      the browser. The model cannot invent a URL, section, or category.
-   - Uses Google's Gemini API free tier. As long as no billing account
-     is attached to the Google Cloud / AI Studio project, spend is hard-
+   - Uses Groq's free API tier (OpenAI-compatible Chat Completions API).
+     No billing account required for the free tier, so spend is hard-
      capped at $0 — requests beyond the free quota are rejected, not billed.
    ============================================================ */
 "use strict";
 
 const SITE_DATA = require("../data.js");
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+const MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
 const MAX_MESSAGE_CHARS = 600;
 const MAX_HISTORY_TURNS = 6;
 const MAX_OUTPUT_TOKENS = 400;
 
 /* Best-effort, zero-cost rate limit. Resets on cold start and is not
    shared across concurrent instances -- a real ceiling, not a strong
-   guarantee. Paired with Gemini's own free-tier quota as the backstop. */
+   guarantee. Paired with Groq's own free-tier quota as the backstop. */
 const hits = new Map();
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 20;
@@ -37,7 +37,8 @@ function rateLimited(ip) {
   return rec.count > MAX_PER_WINDOW;
 }
 
-const ACTIONS = [
+/* OpenAI-compatible "tools" schema (Groq uses the same shape as OpenAI). */
+const TOOLS = [
   {
     name: "scroll_to_section",
     description: "Scroll the visitor's browser to a named section of the page.",
@@ -77,7 +78,7 @@ const ACTIONS = [
       required: ["subject", "message"],
     },
   },
-];
+].map((fn) => ({ type: "function", function: fn }));
 
 function buildSystemPrompt() {
   const p = SITE_DATA.PERSON;
@@ -108,8 +109,8 @@ function buildSystemPrompt() {
 function mapHistory(history) {
   if (!Array.isArray(history)) return [];
   return history.slice(-MAX_HISTORY_TURNS).map((h) => ({
-    role: h.role === "agent" ? "model" : "user",
-    parts: [{ text: String(h.text || "").slice(0, MAX_MESSAGE_CHARS) }],
+    role: h.role === "agent" ? "assistant" : "user",
+    content: String(h.text || "").slice(0, MAX_MESSAGE_CHARS),
   }));
 }
 
@@ -146,9 +147,9 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: "Use POST." });
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({ error: "Agent not configured yet -- GEMINI_API_KEY is missing on the server." });
+    return res.status(500).json({ error: "Agent not configured yet -- GROQ_API_KEY is missing on the server." });
   }
 
   const ip = (req.headers["x-forwarded-for"] || req.socket?.remoteAddress || "unknown").split(",")[0].trim();
@@ -164,28 +165,39 @@ module.exports = async function handler(req, res) {
   }
 
   const payload = {
-    systemInstruction: { parts: [{ text: buildSystemPrompt() }] },
-    contents: [...mapHistory(body.history), { role: "user", parts: [{ text: message }] }],
-    tools: [{ functionDeclarations: ACTIONS }],
-    generationConfig: { temperature: 0.2, maxOutputTokens: MAX_OUTPUT_TOKENS },
+    model: MODEL,
+    messages: [
+      { role: "system", content: buildSystemPrompt() },
+      ...mapHistory(body.history),
+      { role: "user", content: message },
+    ],
+    tools: TOOLS,
+    tool_choice: "auto",
+    temperature: 0.2,
+    max_tokens: MAX_OUTPUT_TOKENS,
   };
 
   try {
-    const upstream = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${apiKey}`,
-      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }
-    );
+    const upstream = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
+      body: JSON.stringify(payload),
+    });
 
     if (!upstream.ok) {
       const errText = await upstream.text().catch(() => "");
-      console.error("Gemini API error", upstream.status, errText.slice(0, 500));
+      console.error("Groq API error", upstream.status, errText.slice(0, 500));
       return res.status(502).json({ error: "The agent is temporarily unavailable. Try again shortly, or email him directly." });
     }
 
     const data = await upstream.json();
-    const parts = data?.candidates?.[0]?.content?.parts || [];
-    const reply = parts.filter((p) => p.text).map((p) => p.text).join("").trim();
-    const rawCalls = parts.filter((p) => p.functionCall).map((p) => p.functionCall);
+    const msg = data?.choices?.[0]?.message || {};
+    const reply = (msg.content || "").trim();
+    const rawCalls = (msg.tool_calls || []).map((tc) => {
+      let args = {};
+      try { args = JSON.parse(tc.function?.arguments || "{}"); } catch { /* malformed args -> dropped by validateActions */ }
+      return { name: tc.function?.name, args };
+    });
     const actions = validateActions(rawCalls);
 
     if (!reply && !actions.length) {
