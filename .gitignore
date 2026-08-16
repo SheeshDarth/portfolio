@@ -13,6 +13,14 @@ desktop.ini
 *.log
 npm-debug.log*
 
+# Secrets — never commit API keys/tokens dropped into the project folder
+*.env
+*.env.*
+*api*key*.txt
+*api*key*.md
+*secret*.txt
+.env.local
+
 # Vercel
 .vercel/
 
