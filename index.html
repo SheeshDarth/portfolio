@@ -1,229 +1,387 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-IN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Siddharth P | AI Systems Engineer</title>
+  <meta name="description" content="AI Systems Engineer building agentic systems, enterprise AI infrastructure, local-first intelligence, and full-stack AI products.">
+  <meta name="author" content="Siddharth P">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="theme-color" content="#070a12">
 
-<!--
-  DRAFT MARKERS — search this file for "DRAFT:" and "TODO:" before shipping.
-  DRAFT: hero sub, about paragraph, case-study prose — all flagged inline, need your edit pass.
-  TODO: swap the mailto: contact link for a real Cal.com/Calendly URL once you have one.
-  TODO: add a real CodeSensei screenshot/GIF in place of the evidence placeholder in Work.
--->
+  <link rel="canonical" href="https://siddharth-portfolio-ashen.vercel.app/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23070a12'/%3E%3Cpath d='M17 18h30v7H25v5h18v7H25v5h22v7H17z' fill='%237c9cff'/%3E%3C/svg%3E">
 
-<title>Siddharth P — Local-First Developer Tools</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2314181A'/%3E%3Crect x='32' y='30' width='16' height='40' fill='%23B5591C'/%3E%3C/svg%3E" />
-<meta name="description" content="I build local-first, zero-dependency developer tools. NirmiqCodeSensei analyzes your code entirely on your machine — no cloud, no telemetry." />
-<meta name="author" content="Siddharth P" />
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-<meta name="theme-color" content="#E7EBEA" />
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://siddharth-portfolio-ashen.vercel.app/">
+  <meta property="og:title" content="Siddharth P | AI Systems Engineer">
+  <meta property="og:description" content="Agentic AI, enterprise AI infrastructure, and full-stack AI product engineering.">
+  <meta property="og:image" content="https://siddharth-portfolio-ashen.vercel.app/assets/siddharth.jpeg">
+  <meta property="og:image:width" content="960">
+  <meta property="og:image:height" content="1280">
+  <meta property="og:image:alt" content="Portrait of Siddharth P">
+  <meta property="og:site_name" content="Siddharth P">
+  <meta property="og:locale" content="en_IN">
 
-<link rel="canonical" href="https://siddharth-portfolio-khaki.vercel.app/" />
-<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Siddharth P | AI Systems Engineer">
+  <meta name="twitter:description" content="Agentic AI, enterprise AI infrastructure, and full-stack AI product engineering.">
+  <meta name="twitter:image" content="https://siddharth-portfolio-ashen.vercel.app/assets/siddharth.jpeg">
+  <meta name="twitter:image:alt" content="Portrait of Siddharth P">
 
-<meta property="og:type" content="profile" />
-<meta property="og:url" content="https://siddharth-portfolio-khaki.vercel.app/" />
-<meta property="og:title" content="Siddharth P — Local-First Developer Tools" />
-<meta property="og:description" content="I build local-first, zero-dependency developer tools. NirmiqCodeSensei analyzes your code entirely on your machine — no cloud, no telemetry." />
-<meta property="og:image" content="https://siddharth-portfolio-khaki.vercel.app/assets/siddharth.jpeg?v=8" />
-<meta property="og:image:width" content="400" />
-<meta property="og:image:height" content="500" />
-<meta property="og:image:alt" content="Siddharth P" />
-<meta property="og:site_name" content="Siddharth P" />
-<meta property="og:locale" content="en_IN" />
+  <link rel="me" href="https://github.com/SheeshDarth">
+  <link rel="me" href="https://www.linkedin.com/in/siddharth-p-7bb185285/">
+  <link rel="me" href="mailto:siddharthprashoo@gmail.com">
+  <link rel="stylesheet" href="styles.css?v=20260914">
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Siddharth P — Local-First Developer Tools" />
-<meta name="twitter:description" content="I build local-first, zero-dependency developer tools. No cloud, no telemetry." />
-<meta name="twitter:image" content="https://siddharth-portfolio-khaki.vercel.app/assets/siddharth.jpeg?v=8" />
-<meta name="twitter:site" content="@SheeshDarth" />
-
-<link rel="me" href="https://github.com/SheeshDarth" />
-<link rel="me" href="https://linkedin.com/in/siddharth-p-7bb185285/" />
-<link rel="me" href="mailto:siddharthprashoo@gmail.com" />
-
-<link rel="stylesheet" href="styles.css?v=21" />
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://siddharth-portfolio-khaki.vercel.app/#person",
-      "name": "Siddharth P",
-      "url": "https://siddharth-portfolio-khaki.vercel.app/",
-      "image": "https://siddharth-portfolio-khaki.vercel.app/assets/siddharth.jpeg?v=8",
-      "sameAs": [
-        "https://github.com/SheeshDarth",
-        "https://linkedin.com/in/siddharth-p-7bb185285/"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://siddharth-portfolio-khaki.vercel.app/#website",
-      "url": "https://siddharth-portfolio-khaki.vercel.app/",
-      "name": "Siddharth P — Local-First Developer Tools",
-      "author": { "@id": "https://siddharth-portfolio-khaki.vercel.app/#person" }
-    }
-  ]
-}
-</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://siddharth-portfolio-ashen.vercel.app/#person",
+        "name": "Siddharth P",
+        "url": "https://siddharth-portfolio-ashen.vercel.app/",
+        "image": "https://siddharth-portfolio-ashen.vercel.app/assets/siddharth.jpeg",
+        "jobTitle": "AI Systems Engineer",
+        "description": "AI Systems Engineer focused on agentic AI, enterprise AI infrastructure, and full-stack AI product engineering.",
+        "email": "mailto:siddharthprashoo@gmail.com",
+        "telephone": "+91 74835 57950",
+        "sameAs": [
+          "https://github.com/SheeshDarth",
+          "https://www.linkedin.com/in/siddharth-p-7bb185285/"
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "B.N.M. Institute of Technology"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://siddharth-portfolio-ashen.vercel.app/#website",
+        "url": "https://siddharth-portfolio-ashen.vercel.app/",
+        "name": "Siddharth P | AI Systems Engineer",
+        "author": { "@id": "https://siddharth-portfolio-ashen.vercel.app/#person" }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Selected AI systems projects",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": "https://github.com/SheeshDarth/PayGuard-AgentX", "name": "PayGuard-AgentX" },
+          { "@type": "ListItem", "position": 2, "url": "https://github.com/SheeshDarth/NirmiqCodeSensei", "name": "NirmiqCodeSensei" },
+          { "@type": "ListItem", "position": 3, "url": "https://github.com/SheeshDarth/NirmiqResearchOS", "name": "NirmiqResearchOS" },
+          { "@type": "ListItem", "position": 4, "url": "https://github.com/SheeshDarth/OriginX-T", "name": "OriginX-T" },
+          { "@type": "ListItem", "position": 5, "url": "https://github.com/SheeshDarth/ascension-os", "name": "AscensionOS" },
+          { "@type": "ListItem", "position": 6, "url": "https://github.com/SheeshDarth/vibecode-project-manager", "name": "Vibecode Project Manager" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<nav class="nav" id="nav">
-  <div class="wrap">
-    <a href="#top" class="nav-claim"><b>Siddharth P</b> — local-first dev tools</a>
-    <div class="nav-links" id="navLinks">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="nav-actions">
-      <a class="btn btn-sm" href="#contact">Book a call</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="lines"><span></span><span></span><span></span></span>
-      </button>
-    </div>
-  </div>
-</nav>
+  <header class="site-header" id="top">
+    <div class="shell nav-shell">
+      <a class="wordmark" href="#top" aria-label="Siddharth P, home">
+        <span class="wordmark-mark" aria-hidden="true">SP</span>
+        <span class="wordmark-copy">
+          <strong>Siddharth P</strong>
+          <span>AI Systems Engineer</span>
+        </span>
+      </a>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#work">Work</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-  <a href="assets/Siddharth-P-Resume.pdf" download>Résumé</a>
-</div>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#work">Systems</a>
+        <a href="#about">About</a>
+        <a href="#experience">Credentials</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-<!-- ================= HERO ================= -->
-<header class="hero" id="top" data-num="00">
-  <div class="wrap">
-    <h1 class="claim" data-reveal style="--ri:0">I build local-first, zero-dependency developer tools.</h1>
-
-    <!-- DRAFT: credibility sub-line — edit freely, keep it aimed at "why local-first is a choice, not a limitation" -->
-    <p class="sub" data-reveal style="--ri:1">Local-first over cloud convenience is a deliberate architectural trade-off — the same one you're making if you're building AI that has to run on the device itself, not phone home for every decision.</p>
-
-    <div class="cta-row" data-reveal style="--ri:2">
-      <a class="btn" href="#contact">Book a call →</a>
-      <a class="text-link" href="#work">See the work ↓</a>
-    </div>
-
-    <div class="verify-strip" data-reveal style="--ri:3" aria-label="Verifiable facts about this page">
-      <div class="row"><span class="k">Dependencies</span><span class="v">0 third-party scripts</span></div>
-      <div class="row"><span class="k">External requests</span><span class="v">0 after first load</span></div>
-      <div class="row"><span class="k">Fonts</span><span class="v">self-hosted woff2, no CDN</span></div>
-      <div class="row"><span class="k">Build step</span><span class="v">none — plain HTML/CSS/JS<span class="cursor" aria-hidden="true"></span></span></div>
-    </div>
-  </div>
-</header>
-
-<!-- ================= WORK ================= -->
-<section class="section" id="work" data-num="01">
-  <div class="wrap">
-    <div class="work-head">
-      <div class="field-label"><span class="n">01</span> Work</div>
-      <h2 class="head">NirmiqCodeSensei</h2>
-      <p class="lede">A local-first learning OS that turns any project into deep understanding — so you know what you shipped, not just that it runs.</p>
-      <div class="work-meta">
-        <span class="tag">Next.js 16</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">SQLite</span>
-        <span class="tag">MCP</span>
-        <span class="tag">Local AI</span>
+      <div class="nav-actions">
+        <a class="nav-resume" href="assets/Siddharth-P-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
       </div>
     </div>
+  </header>
 
-    <div class="work-block">
-      <h3>The problem</h3>
-      <!-- DRAFT: paraphrased from your own README — edit to taste -->
-      <p>You use Cursor, Claude Code, or Copilot to build faster, and the code works. But when someone asks why you made a design decision, or what the time complexity is, or how you'd extend it, the answer isn't there — the AI wrote it, you shipped it, you didn't learn it.</p>
-    </div>
-
-    <div class="work-block">
-      <h3>The trade-off</h3>
-      <p>CodeSensei's offline analyzer is the default: it reads your source and produces an eight-lens senior-engineer report, an architecture map, and the data structures actually detected in your code — entirely on <code>127.0.0.1</code>. An API key is optional and only ever enriches a narrative; it never becomes the thing your analysis depends on.</p>
-    </div>
-
-    <div class="compare" role="table" aria-label="Typical cloud dev-tool vs. CodeSensei">
-      <div class="compare-row head" role="row">
-        <div class="compare-cell label" role="columnheader"></div>
-        <div class="compare-cell label" role="columnheader">Typical cloud tool</div>
-        <div class="compare-cell label" role="columnheader">CodeSensei</div>
-      </div>
-      <div class="compare-row" role="row">
-        <div class="compare-cell label" role="rowheader">Where your code goes</div>
-        <div class="compare-cell cloud" role="cell">Uploaded to a third-party server</div>
-        <div class="compare-cell cs" role="cell">Stays on 127.0.0.1 — never leaves your machine</div>
-      </div>
-      <div class="compare-row" role="row">
-        <div class="compare-cell label" role="rowheader">Network calls</div>
-        <div class="compare-cell cloud" role="cell">Required</div>
-        <div class="compare-cell cs" role="cell">Zero by default; optional key only enriches narrative</div>
-      </div>
-      <div class="compare-row" role="row">
-        <div class="compare-cell label" role="rowheader">What you learn</div>
-        <div class="compare-cell cloud" role="cell">Nothing — the AI already did it</div>
-        <div class="compare-cell cs" role="cell">The DSA in your own code, plus explain-back questions that prove you understand it</div>
-      </div>
-      <div class="compare-row" role="row">
-        <div class="compare-cell label" role="rowheader">Telemetry</div>
-        <div class="compare-cell cloud" role="cell">Usually on by default</div>
-        <div class="compare-cell cs" role="cell">None</div>
-      </div>
-    </div>
-
-    <div class="evidence">
-      <a class="btn btn-ghost btn-sm" href="https://github.com/SheeshDarth/NirmiqCodeSensei" target="_blank" rel="noopener me">View the repo →</a>
-      <span class="tag" style="font-family:var(--font-mono)">npx nirmiqcodesensei@latest</span>
-    </div>
-    <!-- TODO: replace this with a real screenshot/GIF of the Deep Review report or Learning Map graph -->
-    <div class="verify-strip pending" style="margin-top:16px">
-      <div class="row"><span class="k">Screenshot</span><span class="v">— pending, add real capture —</span></div>
-    </div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav aria-label="Mobile navigation">
+      <a href="#work"><span>01</span>Systems</a>
+      <a href="#about"><span>02</span>About</a>
+      <a href="#experience"><span>03</span>Credentials</a>
+      <a href="#contact"><span>04</span>Contact</a>
+      <a href="assets/Siddharth-P-Resume.pdf" target="_blank" rel="noopener"><span>05</span>Résumé</a>
+    </nav>
   </div>
-</section>
 
-<!-- ================= ABOUT ================= -->
-<section class="section about" id="about" data-num="02">
-  <div class="wrap">
-    <div class="field-label"><span class="n">02</span> About</div>
-    <div class="about-row">
-      <img class="about-photo" src="assets/siddharth.jpeg?v=8" alt="Siddharth P" width="88" height="88" />
-      <!-- DRAFT: this whole paragraph is a placeholder using only what the old site's meta tags confirmed (AI/ML engineering student, BNMIT, Bengaluru). Replace with your own facts. -->
-      <p>I'm Siddharth, an AI/ML engineering student in Bengaluru who'd rather read code than trust it blindly. I build tools that hold to that same standard — CodeSensei runs entirely on your machine because a tool meant to help you understand your code shouldn't require handing that code to someone else's server first.</p>
+  <main id="main-content">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>Portfolio / 2026</span><span>Bengaluru, India</span></p>
+        <h1 id="hero-title">AI Systems<br>Engineer<span class="title-stop">.</span></h1>
+        <p class="hero-positioning">Agentic AI <span aria-hidden="true">•</span> Enterprise AI Infrastructure <span aria-hidden="true">•</span> AI Product Engineering</p>
+        <p class="hero-summary">I build systems where models, tools, data, and people work together: agent orchestration, local-first intelligence, auditable workflows, and complete products from interface to infrastructure.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore systems <span aria-hidden="true">↘</span></a>
+          <a class="button button-secondary" href="https://github.com/SheeshDarth" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <dl class="hero-facts">
+          <div><dt>Focus</dt><dd>Agent systems + AI platforms</dd></div>
+          <div><dt>Education</dt><dd>B.E. AI &amp; ML, 2027</dd></div>
+          <div><dt>Current mode</dt><dd>Building in public</dd></div>
+        </dl>
+      </div>
+
+      <aside class="hero-visual" aria-label="Portrait and engineering focus">
+        <div class="portrait-frame">
+          <img src="assets/siddharth.jpeg" alt="Siddharth P outdoors in Bengaluru" width="960" height="1280" fetchpriority="high">
+          <span class="portrait-index" aria-hidden="true">SYS / 01</span>
+        </div>
+        <div class="signal-card">
+          <span class="signal-label">Engineering signal</span>
+          <strong>Proof over positioning.</strong>
+          <p>Every featured system links to its source, architecture, and current status.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="capability-section" aria-labelledby="capability-title">
+      <div class="shell">
+        <div class="section-heading compact-heading">
+          <p class="section-index">00 / SYSTEM MAP</p>
+          <h2 id="capability-title">One engineering practice.<br>Three connected layers.</h2>
+        </div>
+
+        <figure class="capability-map">
+          <figcaption class="sr-only">A capability map connecting AI platform infrastructure to agent workflows and user-facing products.</figcaption>
+          <article class="capability-node">
+            <span class="node-number">01</span>
+            <p class="node-kicker">Foundation</p>
+            <h3>Platform</h3>
+            <p>Model routing, identity, data, policy, audit, observability, and deployment.</p>
+            <ul aria-label="Platform capabilities">
+              <li>Gateways</li><li>RBAC</li><li>RAG</li><li>CI/CD</li>
+            </ul>
+          </article>
+          <span class="map-connector" aria-hidden="true">→</span>
+          <article class="capability-node node-accent">
+            <span class="node-number">02</span>
+            <p class="node-kicker">Coordination</p>
+            <h3>Agents</h3>
+            <p>Supervision, tool use, MCP contracts, human approvals, and evidence trails.</p>
+            <ul aria-label="Agent capabilities">
+              <li>LangGraph</li><li>MCP</li><li>Tools</li><li>Evaluations</li>
+            </ul>
+          </article>
+          <span class="map-connector" aria-hidden="true">→</span>
+          <article class="capability-node">
+            <span class="node-number">03</span>
+            <p class="node-kicker">Delivery</p>
+            <h3>Product</h3>
+            <p>Interfaces and workflows that make complex AI systems useful, legible, and safe.</p>
+            <ul aria-label="Product capabilities">
+              <li>Next.js</li><li>Flutter</li><li>Firebase</li><li>APIs</li>
+            </ul>
+          </article>
+        </figure>
+      </div>
+    </section>
+
+    <section class="work-section shell" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <p class="section-index">01 / SELECTED SYSTEMS</p>
+        <h2 id="work-title">Work that shows<br>how I engineer.</h2>
+        <p>Curated from public repositories. Status labels separate enterprise prototypes, active builds, capstones, and released tools.</p>
+      </div>
+
+      <article class="project project-featured">
+        <div class="project-header">
+          <div>
+            <span class="project-number">01</span>
+            <p class="status"><span aria-hidden="true"></span>Enterprise prototype</p>
+          </div>
+          <a class="project-link" href="https://github.com/SheeshDarth/PayGuard-AgentX" target="_blank" rel="noopener" aria-label="View PayGuard-AgentX repository">Repository <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="featured-grid">
+          <div class="project-intro">
+            <p class="project-domain">Agentic operations / procurement integrity</p>
+            <h3>PayGuard-<br>AgentX</h3>
+            <p class="project-lede">An offline-first retail control-centre prototype for auditable restock, invoice, and fraud-investigation workflows without autonomous payment execution.</p>
+          </div>
+          <div class="architecture-proof" aria-label="PayGuard-AgentX architecture">
+            <p class="proof-label">Architecture proof</p>
+            <ol>
+              <li><span>01</span><strong>Supervisor</strong><small>LangGraph routing</small></li>
+              <li><span>02</span><strong>Agents + critics</strong><small>7 specialists</small></li>
+              <li><span>03</span><strong>MCP tools</strong><small>8 schema-bound tools</small></li>
+              <li><span>04</span><strong>Evidence</strong><small>HMAC-signed dossiers</small></li>
+              <li><span>05</span><strong>Human decision</strong><small>Approval queue</small></li>
+            </ol>
+          </div>
+        </div>
+        <div class="project-footer">
+          <p><strong>Engineering proof</strong> Multi-agent supervision, critic loops, structured tool contracts, tamper-evident evidence, and explicit human authority at the final decision boundary.</p>
+          <ul class="tech-list" aria-label="Technologies used"><li>Python</li><li>LangGraph</li><li>MCP</li><li>SQLite</li><li>Chroma</li><li>Kuzu</li><li>Ollama</li></ul>
+        </div>
+      </article>
+
+      <div class="project-grid">
+        <article class="project">
+          <div class="project-header">
+            <div><span class="project-number">02</span><p class="status"><span aria-hidden="true"></span>Active build</p></div>
+            <a class="project-link" href="https://github.com/SheeshDarth/NirmiqCodeSensei" target="_blank" rel="noopener" aria-label="View NirmiqCodeSensei repository">Repository <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="project-domain">Local-first developer learning</p>
+          <h3>NirmiqCodeSensei</h3>
+          <p class="project-lede">Turns a real repository into a private learning environment with senior-grade review, architecture mapping, code-grounded DSA, and explain-back practice.</p>
+          <div class="project-proof"><strong>Engineering proof</strong><p>Eight review lenses, repository graphing, MCP integrations, and a localhost SQLite data layer with no telemetry.</p></div>
+          <ul class="tech-list" aria-label="Technologies used"><li>Next.js</li><li>TypeScript</li><li>SQLite</li><li>Drizzle</li><li>MCP</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-header">
+            <div><span class="project-number">03</span><p class="status"><span aria-hidden="true"></span>Active MVP</p></div>
+            <a class="project-link" href="https://github.com/SheeshDarth/NirmiqResearchOS" target="_blank" rel="noopener" aria-label="View NirmiqResearchOS repository">Repository <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="project-domain">Local academic intelligence</p>
+          <h3>NirmiqResearchOS</h3>
+          <p class="project-lede">A local research workspace for evidence-grounded discovery, synthesis, paper analysis, and exam preparation.</p>
+          <div class="project-proof"><strong>Engineering proof</strong><p>Hybrid BM25 and vector retrieval with reciprocal-rank fusion, citations, abstention, evaluation flows, and local Ollama inference.</p></div>
+          <ul class="tech-list" aria-label="Technologies used"><li>FastAPI</li><li>Next.js</li><li>BM25</li><li>Chroma</li><li>SQLite</li><li>Ollama</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-header">
+            <div><span class="project-number">04</span><p class="status"><span aria-hidden="true"></span>Active capstone</p></div>
+            <a class="project-link" href="https://github.com/SheeshDarth/OriginX-T" target="_blank" rel="noopener" aria-label="View OriginX-T repository">Repository <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="project-domain">LLM dataset forensics</p>
+          <h3>OriginX-T</h3>
+          <p class="project-lede">A time-aware dataset-forensics system designed to detect contamination risks before they compound into model degradation.</p>
+          <div class="project-proof"><strong>Engineering proof</strong><p>Models synthetic, recursive, paraphrased, and benchmark-leakage signals using conformal prediction, survival analysis, and SHAP explanations.</p></div>
+          <ul class="tech-list" aria-label="Technologies used"><li>Python</li><li>PyTorch</li><li>Transformers</li><li>PEFT</li><li>SHAP</li><li>MLflow</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="project-header">
+            <div><span class="project-number">05</span><p class="status"><span aria-hidden="true"></span>Product build</p></div>
+            <a class="project-link" href="https://github.com/SheeshDarth/ascension-os" target="_blank" rel="noopener" aria-label="View AscensionOS repository">Repository <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="project-domain">Offline-capable product engineering</p>
+          <h3>AscensionOS</h3>
+          <p class="project-lede">A mobile-first personal operating system that converts goals into daily proof, performance memory, and structured weekly review.</p>
+          <div class="project-proof"><strong>Engineering proof</strong><p>Local cache and offline queue, optional Supabase synchronization, testable domain logic, PWA behavior, and Capacitor Android packaging.</p></div>
+          <ul class="tech-list" aria-label="Technologies used"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>Vitest</li><li>Capacitor</li><li>Vercel</li></ul>
+        </article>
+
+        <article class="project project-wide">
+          <div class="project-header">
+            <div><span class="project-number">06</span><p class="status status-released"><span aria-hidden="true"></span>Released tool</p></div>
+            <a class="project-link" href="https://github.com/SheeshDarth/vibecode-project-manager" target="_blank" rel="noopener" aria-label="View Vibecode Project Manager repository">Repository <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="wide-grid">
+            <div><p class="project-domain">AI-native developer workflow</p><h3>Vibecode Project Manager</h3></div>
+            <div><p class="project-lede">A cross-platform skill-routing tool for Claude Code that analyzes a project, ranks relevant capabilities, asks for approval, and activates only the selected skills.</p></div>
+            <div class="project-proof"><strong>Engineering proof</strong><p>Deterministic lexical ranking, usage-history signals, approval-first configuration writes, Bash and PowerShell support, and CI validation.</p></div>
+          </div>
+          <ul class="tech-list" aria-label="Technologies used"><li>Bash</li><li>PowerShell</li><li>Claude Code</li><li>GitHub Actions</li></ul>
+        </article>
+      </div>
+
+      <div class="archive" aria-labelledby="archive-title">
+        <div class="archive-intro">
+          <p class="section-index">ARCHIVE / EARLIER EVIDENCE</p>
+          <h3 id="archive-title">A smaller trail of experiments and applied systems.</h3>
+        </div>
+        <ul>
+          <li><a href="https://github.com/SheeshDarth/NirmiqEcho" target="_blank" rel="noopener"><span>NirmiqEcho</span><small>Offline voice assistant + dictation</small><b aria-hidden="true">↗</b></a></li>
+          <li><a href="https://github.com/SheeshDarth/vyomaguard-phm" target="_blank" rel="noopener"><span>VyomaGuard</span><small>Explainable mission assurance</small><b aria-hidden="true">↗</b></a></li>
+          <li><a href="https://github.com/SheeshDarth/SmartHelm" target="_blank" rel="noopener"><span>SmartHelm</span><small>Edge drowsiness detection</small><b aria-hidden="true">↗</b></a></li>
+          <li><a href="https://github.com/SheeshDarth/Stress-Detection-System" target="_blank" rel="noopener"><span>Stress Detection</span><small>Multimodal webcam inference</small><b aria-hidden="true">↗</b></a></li>
+          <li><a href="https://github.com/SheeshDarth/Automated-Brain-Tumour-Detection" target="_blank" rel="noopener"><span>Brain Tumour Detection</span><small>ResNet, ViT, and Grad-CAM study</small><b aria-hidden="true">↗</b></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="shell about-grid">
+        <div class="section-heading">
+          <p class="section-index">02 / ABOUT</p>
+          <h2 id="about-title">Building the connective tissue of useful AI.</h2>
+        </div>
+        <div class="about-copy">
+          <p class="about-lede">My work sits between platform engineering, agent behavior, and product delivery.</p>
+          <p>I am interested in the parts that make AI dependable beyond a demo: structured tool contracts, human decision boundaries, evidence and audit trails, retrieval quality, local execution, and interfaces that make system state understandable.</p>
+          <p>The result is a portfolio that spans orchestration and infrastructure without losing sight of the person using the product.</p>
+        </div>
+        <div class="principles" aria-label="Engineering principles">
+          <article><span>01</span><h3>Evidence first</h3><p>Claims should resolve to source, architecture, tests, or a visible product decision.</p></article>
+          <article><span>02</span><h3>Human authority</h3><p>High-impact workflows need explicit approval boundaries and clear system state.</p></article>
+          <article><span>03</span><h3>Local when useful</h3><p>Privacy, latency, and control can be product features, not only constraints.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="credentials-section shell" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <p class="section-index">03 / CREDENTIALS</p>
+        <h2 id="experience-title">Experience<br>and education.</h2>
+      </div>
+      <div class="credentials-list">
+        <article>
+          <div class="credential-meta"><span>Experience</span><time datetime="2025-06">Jun – Jul 2025</time></div>
+          <div class="credential-body">
+            <h3>AI/ML Intern</h3>
+            <p class="credential-org">Equvinoxis Pvt Ltd</p>
+            <p>Contributed to research and prototyping for AI-assisted facial analysis of pilot stress, working across feature extraction, model experimentation, and human-lab evaluation.</p>
+          </div>
+        </article>
+        <article>
+          <div class="credential-meta"><span>Education</span><time datetime="2023">2023 – 2027</time></div>
+          <div class="credential-body">
+            <h3>B.E. Artificial Intelligence &amp; Machine Learning</h3>
+            <p class="credential-org">B.N.M. Institute of Technology, Bengaluru</p>
+            <p>CGPA 8.61 / 10. Coursework and projects across machine learning, deep learning, software engineering, and intelligent systems.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-grid">
+        <div>
+          <p class="section-index">04 / CONTACT</p>
+          <h2 id="contact-title">Let’s build the<br>system behind the AI.</h2>
+        </div>
+        <div class="contact-copy">
+          <p>I’m interested in AI systems, agentic AI, platform, applied AI, and AI product engineering opportunities.</p>
+          <a class="contact-primary" href="mailto:siddharthprashoo@gmail.com">siddharthprashoo@gmail.com <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="shell contact-links" aria-label="Contact links">
+        <a href="tel:+917483557950"><span>Phone</span><strong>+91 74835 57950</strong></a>
+        <a href="https://www.linkedin.com/in/siddharth-p-7bb185285/" target="_blank" rel="noopener"><span>LinkedIn</span><strong>Connect</strong></a>
+        <a href="https://github.com/SheeshDarth" target="_blank" rel="noopener"><span>GitHub</span><strong>View source</strong></a>
+        <a href="assets/Siddharth-P-Resume.pdf" target="_blank" rel="noopener"><span>Résumé</span><strong>Open PDF</strong></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>© 2026 Siddharth P</p>
+      <p>Designed and engineered as a static system.</p>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ================= CONTACT ================= -->
-<section class="section contact" id="contact" data-num="03">
-  <div class="wrap">
-    <div class="field-label"><span class="n">03</span> Contact</div>
-    <h2 class="claim">Let's talk about what you're building.</h2>
-
-    <!-- TODO: replace mailto: with a real Cal.com / Calendly link -->
-    <span class="todo">TODO — no booking link yet, using mailto: as an interim</span>
-    <div class="cta-row">
-      <a class="btn" href="mailto:siddharthprashoo@gmail.com?subject=Let%27s%20talk">Book a call →</a>
-    </div>
-
-    <div class="foot-links">
-      <a class="text-link" href="https://github.com/SheeshDarth" target="_blank" rel="noopener me">GitHub</a>
-      <a class="text-link" href="https://linkedin.com/in/siddharth-p-7bb185285/" target="_blank" rel="noopener me">LinkedIn</a>
-      <a class="text-link" href="assets/Siddharth-P-Resume.pdf" download>Résumé</a>
-      <a class="text-link" href="mailto:siddharthprashoo@gmail.com">Email</a>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="wrap foot-grid">
-    <span class="foot-byline">Siddharth P — Bengaluru, India</span>
-    <span class="foot-byline">0 dependencies · 0 external requests · <button class="text-link" id="toTop" style="font:inherit">back to top</button></span>
-  </div>
-</footer>
-
-<script src="app.js?v=1"></script>
+  <script src="app.js?v=20260914" defer></script>
 </body>
 </html>
