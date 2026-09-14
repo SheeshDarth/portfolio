@@ -653,6 +653,170 @@ ol {
   margin-bottom: clamp(3.5rem, 7vw, 6rem);
 }
 
+.launch-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.launch-intro > div > p:last-child {
+  max-width: 42rem;
+  margin-top: 0.7rem;
+  color: var(--text-soft);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+.launch-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.launch-note span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 0.22rem rgba(137, 220, 179, 0.12);
+}
+
+.launch-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.launch-card {
+  min-width: 0;
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: border-color var(--ease), transform var(--ease), background-color var(--ease);
+}
+
+.launch-card:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-0.2rem);
+}
+
+.launch-creda,
+.launch-smarthelm {
+  grid-column: span 7;
+}
+
+.launch-aarna,
+.launch-trustlayer {
+  grid-column: span 5;
+}
+
+.launch-creda {
+  background:
+    linear-gradient(145deg, rgba(75, 104, 213, 0.28), transparent 62%),
+    var(--surface);
+  border-color: rgba(141, 167, 255, 0.42);
+}
+
+.launch-aarna {
+  background:
+    linear-gradient(145deg, rgba(127, 94, 211, 0.25), transparent 63%),
+    var(--surface);
+  border-color: rgba(180, 154, 255, 0.34);
+}
+
+.launch-trustlayer {
+  background:
+    linear-gradient(145deg, rgba(105, 120, 162, 0.22), transparent 63%),
+    var(--surface);
+}
+
+.launch-smarthelm {
+  background:
+    linear-gradient(145deg, rgba(69, 148, 126, 0.25), transparent 61%),
+    var(--surface);
+  border-color: rgba(137, 220, 179, 0.34);
+}
+
+.launch-card .project-domain {
+  margin-top: clamp(2rem, 6vw, 4.5rem);
+}
+
+.launch-card h3 {
+  margin-top: 0.5rem;
+  font-size: clamp(2.4rem, 5vw, 4.75rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+.launch-card .project-lede {
+  max-width: 45rem;
+  margin-top: 1.2rem;
+  color: var(--text-soft);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+.launch-card .project-proof {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.launch-card .tech-list {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 0.35rem 1rem;
+}
+
+.project-attribution {
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.status-testnet {
+  color: var(--violet);
+}
+
+.status-app {
+  color: var(--green);
+}
+
+.systems-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block: clamp(4rem, 8vw, 7rem) 1rem;
+  color: var(--faint);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+.systems-divider i {
+  height: 1px;
+  flex: 1;
+  background: var(--line-strong);
+}
+
 .project {
   min-width: 0;
   display: flex;
@@ -1193,6 +1357,13 @@ ol {
     max-width: 42rem;
   }
 
+  .launch-creda,
+  .launch-smarthelm,
+  .launch-aarna,
+  .launch-trustlayer {
+    grid-column: span 6;
+  }
+
   .wide-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1271,6 +1442,26 @@ ol {
     grid-template-columns: 1fr;
   }
 
+  .launch-intro {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .launch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .launch-creda,
+  .launch-smarthelm,
+  .launch-aarna,
+  .launch-trustlayer {
+    grid-column: auto;
+  }
+
+  .launch-card {
+    min-height: 0;
+  }
+
   .project-wide {
     grid-column: auto;
   }
@@ -1330,6 +1521,20 @@ ol {
     grid-template-columns: 1.75rem minmax(0, 1fr);
     gap: 0.5rem;
     padding-block: 0.6rem;
+  }
+
+  .project-links {
+    justify-content: start;
+    gap: 0.25rem 0.85rem;
+  }
+
+  .launch-card .project-header {
+    min-height: 0;
+    flex-direction: column;
+  }
+
+  .launch-card .project-domain {
+    margin-top: 2.25rem;
   }
 
   .architecture-proof small {
