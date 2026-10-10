@@ -85,7 +85,7 @@ def build_resume() -> None:
     story += [
         paragraph("SUMMARY", s["section"]),
         paragraph(
-            "B.E. AI/ML student building dependable AI-powered software across web products, agentic workflows, local RAG, edge devices, and deterministic finance workflows. Interested in the engineering around models: tool contracts, async work, evidence, human approval, local execution, and clear user workflows.",
+            "B.E. AI/ML student building dependable AI-powered software across web products, enterprise AI applications, agentic workflows, local RAG, and edge devices. Interested in the engineering around models: tool contracts, async work, evidence, human approval, local execution, and clear user workflows.",
             s["base"],
         ),
         paragraph("EXPERIENCE", s["section"]),
@@ -100,8 +100,8 @@ def build_resume() -> None:
             paragraph("Built a full-stack candidate-verification workflow with structured evaluation, repository analysis, and authenticity signals; implemented multi-model fallback, Redis/BullMQ background work, and Supabase-backed product flows. React, Node.js, Supabase, Redis, BullMQ.", s["compact"]),
         ]),
         KeepTogether([
-            paragraph('<link href="https://github.com/SheeshDarth/fee-finance-agent" color="#335ACB">FeeOps Finance Agent</link> | Subhanu Technologies assessment prototype', s["project"]),
-            paragraph("Built a reviewable school-fee finance workflow with integer-paise ledgering, confidence-gated reconciliation, CSV/Excel import, worklists, and a read-only Google ADK wrapper. Monetary decisions remain deterministic; AI is limited to reviewed communication drafts. Python, React, Vite, Google ADK, Cloud Run.", s["compact"]),
+            paragraph("LibreChat + Buzz | Subhanu Technologies internal application work in progress", s["project"]),
+            paragraph("Working across LibreChat and Buzz application workflows with focus on ACP/MCP integration paths, clear tool boundaries, and user-facing interactions that make agent state and actions understandable. Internal work; scope is intentionally described at a high level. LibreChat, Buzz, ACP, MCP, LLM workflows.", s["compact"]),
         ]),
         KeepTogether([
             paragraph('<link href="https://github.com/SheeshDarth/SmartHelm" color="#335ACB">SmartHelm</link> | Edge-AI rider-safety system', s["project"]),
@@ -116,9 +116,9 @@ def build_resume() -> None:
             paragraph("Built a browser and web workflow that translates dense privacy-policy text into a visible risk signal through an Express-backed, LLM-assisted analysis layer. Chrome extension, Express, LLM integration.", s["compact"]),
         ]),
         paragraph("SKILLS", s["section"]),
-        paragraph("<b>AI systems:</b> Agent workflows, MCP, LangGraph, Google ADK, LLM integration, human approvals, audit evidence, local RAG, hybrid retrieval, evaluation workflows", s["skill"]),
+        paragraph("<b>AI systems:</b> Agent workflows, ACP, MCP, LangGraph, LLM integration, human approvals, audit evidence, local RAG, hybrid retrieval, evaluation workflows", s["skill"]),
         paragraph("<b>Engineering:</b> Python, FastAPI, TypeScript, React, Next.js, Node.js, Express, REST APIs, Redis, BullMQ, SQLite, PostgreSQL, Supabase, Firebase", s["skill"]),
-        paragraph("<b>Edge &amp; delivery:</b> MediaPipe, Raspberry Pi, Kotlin, Android, Docker, Cloud Run, GitHub Actions, CI/CD, Git, Flutter", s["skill"]),
+        paragraph("<b>Edge &amp; delivery:</b> MediaPipe, Raspberry Pi, Kotlin, Android, Docker, GitHub Actions, CI/CD, Git, Flutter", s["skill"]),
         paragraph("EDUCATION", s["section"]),
         paragraph("B.E. Artificial Intelligence and Machine Learning - B.N.M. Institute of Technology, Bengaluru | 2023 - 2027 | CGPA: 8.61/10", s["role"]),
     ]
@@ -130,7 +130,7 @@ def build_cv() -> None:
     story = header(s, "AI Systems Engineer | Agentic AI, Local RAG & Edge-to-Cloud Product Engineering")
     story += [
         paragraph("PROFILE", s["section"]),
-        paragraph("B.E. AI/ML student focused on building AI-powered software that remains understandable under real product constraints. Public work spans shipped web products, deterministic finance workflows, LLM-assisted browser workflows, governed agent prototypes, local-first retrieval, edge sensing, mobile integration, and applied ML research.", s["base"]),
+        paragraph("B.E. AI/ML student focused on building AI-powered software that remains understandable under real product constraints. Work spans shipped web products, internal enterprise AI applications, LLM-assisted browser workflows, governed agent prototypes, local-first retrieval, edge sensing, mobile integration, and applied ML research.", s["base"]),
         paragraph("TARGET ROLES", s["section"]),
         paragraph("AI Systems Engineer | Applied AI Engineer | Agentic AI Engineer | AI Product Engineer | AI Platform Engineer", s["compact"]),
         paragraph("EXPERIENCE", s["section"]),
@@ -142,8 +142,8 @@ def build_cv() -> None:
         paragraph("FEATURED SYSTEMS", s["section"]),
         paragraph('<link href="https://www.trycreda.app" color="#335ACB">CREDA</link> | Shipped candidate-verification product', s["project"]),
         paragraph("Full-stack workflow for structured candidate evaluation, repository analysis, and authenticity signals. Engineering focus: multi-model fallback, Redis/BullMQ background work, Supabase-backed product flows, and the operational decisions around AI-assisted review. Stack: React, Node.js, Supabase, Redis, BullMQ, LLMs.", s["compact"]),
-        paragraph('<link href="https://github.com/SheeshDarth/fee-finance-agent" color="#335ACB">FeeOps Finance Agent</link> | Subhanu Technologies assessment prototype', s["project"]),
-        paragraph("Scoped school-fee finance workflow that brings structures, concessions, payment history, and approved plans into a reviewable run. Integer-paise ledgering, confidence-gated reconciliation, CSV/Excel import, worklists, and a read-only Google ADK wrapper keep monetary decisions deterministic and auditable; AI is restricted to reviewed wording drafts. Stack: Python, React, Vite, Google ADK, Cloud Run. This is project work, not an employment title.", s["compact"]),
+        paragraph("LibreChat + Buzz | Subhanu Technologies internal application work in progress", s["project"]),
+        paragraph("Current internal work across LibreChat and Buzz application workflows. Focus: ACP/MCP integration paths, explicit tool boundaries, and user-facing interaction flows that make agent state and actions understandable. Stack: LibreChat, Buzz, ACP, MCP, LLM workflows. Scope is intentionally described at a high level because these applications are internal; this is not presented as an employment title.", s["compact"]),
         paragraph('<link href="https://github.com/SheeshDarth/SmartHelm" color="#335ACB">SmartHelm</link> | Edge-AI rider-safety system', s["project"]),
         paragraph("Privacy-first drowsiness detection for delivery riders. A Raspberry Pi helmet unit runs MediaPipe eye analysis with MAX30102 heart-rate/SpO2 sensing and alerts; a Kotlin Android app and Firebase dashboard connect rider, device, and fleet. Stack: Python, Flask, MediaPipe, Raspberry Pi, Kotlin, Firebase.", s["compact"]),
         paragraph('<link href="https://github.com/SheeshDarth/PayGuard-AgentX" color="#335ACB">PayGuard-AgentX</link> | Governed agent prototype', s["project"]),
@@ -167,10 +167,10 @@ def build_cv() -> None:
         paragraph("ADDITIONAL PUBLIC WORK", s["section"]),
         paragraph("PostPilot AI - leakage-aware social forecasting study | NirmiqEcho - offline Windows voice assistant and dictation | VyomaGuard - explainable space mission-assurance prototype | Brain Tumour Detection - ResNet, ViT, and Grad-CAM study | <link href=\"https://github.com/SheeshDarth\" color=\"#335ACB\">Complete public GitHub record</link>", s["compact"]),
         paragraph("TECHNICAL SKILLS", s["section"]),
-        paragraph("<b>AI systems:</b> Agent workflows, MCP, LangGraph, Google ADK, tool contracts, human approvals, audit evidence, LLM integration, local RAG, hybrid retrieval, citations, abstention, evaluation workflows", s["skill"]),
+        paragraph("<b>AI systems:</b> Agent workflows, ACP, MCP, LangGraph, tool contracts, human approvals, audit evidence, LLM integration, local RAG, hybrid retrieval, citations, abstention, evaluation workflows", s["skill"]),
         paragraph("<b>Backend &amp; data:</b> Python, FastAPI, Node.js, Express, REST APIs, Redis, BullMQ, SQLite, PostgreSQL, Supabase, Firebase, Chroma", s["skill"]),
         paragraph("<b>Product &amp; edge:</b> TypeScript, React, Next.js, Flutter, Kotlin, Android, MediaPipe, Raspberry Pi, HTML/CSS, accessible UI", s["skill"]),
-        paragraph("<b>Delivery:</b> Docker, Cloud Run, GitHub Actions, CI/CD, Git, Ollama, Vercel", s["skill"]),
+        paragraph("<b>Delivery:</b> Docker, GitHub Actions, CI/CD, Git, Ollama, Vercel", s["skill"]),
         paragraph("EDUCATION", s["section"]),
         paragraph("B.E. Artificial Intelligence and Machine Learning - B.N.M. Institute of Technology, Bengaluru | 2023 - 2027 | CGPA: 8.61/10", s["role"]),
     ]

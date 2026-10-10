@@ -910,6 +910,12 @@ ol {
   color: var(--blue);
 }
 
+.project-link-static,
+.project-link-static:hover {
+  color: var(--muted);
+  cursor: default;
+}
+
 .featured-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(21rem, 0.95fr);
