@@ -77,9 +77,7 @@ All five are compulsory major projects. Each needs an explicit status label, sho
 
 Subhanu work is a separate current experience section, not one of the five public-project cards. Use **FDE Intern — Subhanu | Current** and avoid an invented start date.
 
-The CV/evidence record currently identifies LibreChat and Buzz, a voiceless-agent workflow, media generation, and Algo-Ops. On the public site, present a concise high-level account of the kind of work and judgment involved. Do not show proprietary system diagrams, exact integration architecture, screenshots, internal URLs, or customer/provider specifics without clearance.
-
-If milestones are mentioned, preserve their state: completed video-generation and direct signed-media retrieval checks; unresolved saved-agent retrieval TTL issue; player overlay not deployed; Algo-Ops dry-run only with live actions gated; Buzz integration experimental/paused. Prefer omitting internal implementation detail over making a vague claim sound complete.
+Present this as a concise, high-level overview: working across the **Enterprise AI platform (LibreChat and its agents), the KiddyPi app, and a Voice Agent**. Do not include internal progress states or critical implementation details. Do not show proprietary system diagrams, exact integration architecture, screenshots, internal URLs, or customer/provider specifics.
 
 ## 7. Figma concept deliverable
 

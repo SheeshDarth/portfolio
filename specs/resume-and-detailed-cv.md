@@ -40,8 +40,6 @@ For each candidate entry, record:
 - **Team-built testnet:** use for AARNA; state team attribution and the verified individual contribution.
 - **Prototype:** use for PayGuard-AgentX unless release evidence changes the classification.
 - **Active build / capstone:** work is underway; describe completed milestones separately from gated or planned features.
-- **Experimental / paused:** use for Buzz integration until evidence supports resumption or completion.
-- **Dry-run:** use for Algo-Ops; do not imply live AWS operations.
 - **Coursework, hackathon, assessment, fork/study, archive-only, or excluded:** keep these separate from personal products and employment achievements.
 
 Unknowns remain unknown in drafts. Resolve material ambiguity with Siddharth before external publication; do not silently choose the strongest interpretation.
@@ -57,17 +55,7 @@ Unknowns remain unknown in drafts. Resolve material ambiguity with Siddharth bef
 
 ### Current Subhanu work
 
-Keep the experience heading exactly **FDE Intern — Subhanu | Current**. Do not rename the title to AI Systems Engineer, invent dates, or present internal project names as public products without approval.
-
-The evidence currently supports high-level coverage of LibreChat and Buzz application work, a voiceless-agent workflow, media-generation workflows, and Algo-Ops. Phrase only verified work and milestone state:
-
-- A 1080p video-generation job completed and direct signed-media retrieval checks passed.
-- Saved-agent media retrieval still has an unresolved TTL issue; the player overlay is not deployed.
-- Algo-Ops is deployed/running in dry-run; live actions remain gated, and the Hermes integration is not connected.
-- Buzz integration is experimental/paused; do not imply a production integration.
-- Keep internal endpoints, screenshots, customer/provider details, unreleased architecture, and sensitive implementation specifics out of public documents unless explicitly cleared.
-
-On the résumé, compress this into a few truthful bullets with progress state where material. On the detailed CV, distinguish completed, in-progress, blocked, and gated milestones rather than presenting the project as a finished system. FeeOps is a separate scoped assessment and must not be described as the Subhanu role or its main project.
+Keep the experience heading exactly **FDE Intern — Subhanu | Current**. Do not rename the title to AI Systems Engineer or invent dates. Use a concise, high-level overview: working across the Enterprise AI platform (LibreChat and its agents), the KiddyPi app, and a Voice Agent. Do not include internal milestones, implementation status, endpoints, screenshots, customer/provider details, or unreleased architecture. FeeOps is a separate scoped assessment and must not be described as the Subhanu role or its main project.
 
 ### Prior experience and education
 
@@ -89,7 +77,7 @@ These projects must be treated as major entries and reconciled before writing fi
 
 The detailed CV must also assess the following known candidates rather than silently omitting them. This is a reconciliation queue, **not** a claim that each is an individually completed project:
 
-- Public/local candidates: NirmiqCodeSensei, NirmiqResearchOS, OriginX-T / ORIGIN-T, AscensionOS / Ascension OS, Vibecode Project Manager, NirmiqEcho, NirmiqEcho-Mobile, VyomaGuard, AGION, Stress-Detection-System, Automated-Brain-Tumour-Detection / Brain-Tumour, Skylark BI, Skylark GCP, KiddyPi, Voice Agent, DSA and Skill planner, agentic-boss-trainer_portal, FlyRankAI, IDEA, Vision app, Cloudfar, Shopify Seller App, Schneider, Handshake AI, and localtmp.
+- Public/local candidates: NirmiqCodeSensei, NirmiqResearchOS, OriginX-T / ORIGIN-T, AscensionOS / Ascension OS, Vibecode Project Manager, NirmiqEcho, NirmiqEcho-Mobile, VyomaGuard, AGION, Stress-Detection-System, Automated-Brain-Tumour-Detection / Brain-Tumour, Skylark BI, Skylark GCP, DSA and Skill planner, agentic-boss-trainer_portal, FlyRankAI, IDEA, Vision app, Cloudfar, Shopify Seller App, Schneider, Handshake AI, and localtmp. KiddyPi and Voice Agent are mentioned only as current Subhanu work areas, not as separate public projects.
 - Event/research candidates: DeepMind Kaggle hackathon / BOLT-Gemma, Kaggle-Hackathon, and any Enveda CASMI work found in the folders or history. Label the event, team, and individual contribution only if confirmed.
 - Assessment/starter candidates: FeeOps, PostPilot_AI_Starter / PE3 project, and any other starter or assessment folder. Do not claim a complete product if the evidence is a template, pitch deck, binary, or scoped evaluation only.
 - Capstone: local **ORIGIN-T** and public **OriginX-T** appear related; verify canonical title, repository identity, phase, implemented vs gated capabilities, authorship, report claims, and release/readiness before deciding how the alias is shown.
@@ -103,7 +91,7 @@ The candidate list is deliberately broad because “complete CV” means auditin
 
 1. **Identity line:** name, professional headline, phone, email, portfolio, GitHub, LinkedIn. All links must remain clickable.
 2. **Summary:** two compact lines stating the AI systems focus and breadth across agent workflows/infrastructure and product engineering. Avoid “enthusiast,” generic objective language, and unsupported claims.
-3. **Experience:** current Subhanu FDE internship first; Equvinoxis AI/ML internship second. Retain official titles. Give Subhanu enough detail to distinguish LibreChat/Buzz, media/agent work, and dry-run automation without exposing private internals. Include only verified Equvinoxis work.
+3. **Experience:** current Subhanu FDE internship first; Equvinoxis AI/ML internship second. Retain official titles. Give Subhanu a concise overview of the Enterprise AI platform (LibreChat and agents), KiddyPi app, and Voice Agent. Include only verified Equvinoxis work.
 4. **Selected projects:** include the five required major projects—CREDA, TrustLayer, AARNA, SmartHelm, and PayGuard-AgentX—in a compact, scannable format. Keep status/attribution visible (shipped, team-built testnet, existing app/release unverified, prototype). If the evidence audit changes a status, the ledger takes precedence.
 5. **Skills:** grouped, not a keyword wall. Candidate group labels: Agent & Tool Systems; AI/LLM & Retrieval; Backend & Data; Product & Mobile; Delivery & Infrastructure. Keep only supported items; candidates to verify include MCP, LangGraph, Python/FastAPI, TypeScript/Next.js, local AI/RAG, PostgreSQL, Docker/CI, Flutter, and Firebase.
 6. **Education:** BNMIT degree, dates, and CGPA as above.
@@ -119,7 +107,7 @@ The candidate list is deliberately broad because “complete CV” means auditin
 
 The target is three balanced A4 pages with no forced blank pages or large unused regions. Keep body text readable (target 9–10 pt; never below 8.5 pt), maintain a consistent grid and running page identity, and paginate naturally. If the verified complete inventory cannot fit legibly in three pages, stop and request a scope decision rather than dropping verified projects or making the document unreadable.
 
-- **Page 1 — Profile, Experience, Education:** headline and compact systems summary; current Subhanu role with clear milestone states; Equvinoxis official internship; education. No oversized “role fit” panels.
+- **Page 1 — Profile, Experience, Education:** headline and compact systems summary; current Subhanu role with a high-level overview only; Equvinoxis official internship; education. No oversized “role fit” panels.
 - **Page 2 — Major technical work:** expanded entries for CREDA, TrustLayer, AARNA, SmartHelm, PayGuard-AgentX, plus the most relevant additional work (e.g. capstone) as supported. For each, state problem/context, individual/team contribution, system/engineering evidence, technologies, status, and proof link. Do not repeat identical role-fit text.
 - **Page 3 — Complete categorized index:** all remaining verified code projects and relevant coursework, hackathons, research, and assessments. Each entry should carry a compact contribution/status/technology/proof record. Distinguish category and attribution; use aliases once in the canonical row, not as extra projects.
 
@@ -151,5 +139,5 @@ Verification checklist:
 - The universal résumé works as a reusable base across the target role families and includes all five required major projects in concise form.
 - The detailed CV contains every verified code project and relevant coursework/hackathon/assessment record discovered in the audit, with aliases deduplicated and attribution/status visible.
 - CREDA/TrustLayer are not over-described beyond evidence; AARNA is team-attributed; SmartHelm is not called shipped without release proof; PayGuard-AgentX is labeled prototype unless verified otherwise.
-- Subhanu role and milestone states are factual and privacy-reviewed; FeeOps remains distinct from employment.
+- Subhanu role is presented as a high-level work overview without internal progress states; FeeOps remains distinct from employment.
 - Both PDFs are legible, ATS-readable, searchable, link-enabled, reproducible, and free of forced blank space or layout defects.
