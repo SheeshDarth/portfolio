@@ -55,7 +55,7 @@ Unknowns remain unknown in drafts. Resolve material ambiguity with Siddharth bef
 
 ### Current Subhanu work
 
-Keep the experience heading exactly **FDE Intern — Subhanu | Current**. Do not rename the title to AI Systems Engineer or invent dates. Use a concise, high-level overview: working across the Enterprise AI platform (LibreChat and its agents), the KiddyPi app, and a Voice Agent. Do not include internal milestones, implementation status, endpoints, screenshots, customer/provider details, or unreleased architecture. FeeOps is a separate scoped assessment and must not be described as the Subhanu role or its main project.
+Keep the experience heading exactly **FDE Intern — Subhanu | Current**. Do not rename the title to AI Systems Engineer or invent dates. Use a high-level technical overview of work across Subhanu's Enterprise AI platform (LibreChat and agent workflows), the KiddyPi app, and a Voice Agent, emphasizing agent orchestration, conversational interfaces, and product integration. Do not include internal milestones, implementation status, endpoints, screenshots, customer/provider details, or unreleased architecture. FeeOps is a separate scoped assessment and must not be described as the Subhanu role or its main project.
 
 ### Prior experience and education
 
@@ -91,7 +91,7 @@ The candidate list is deliberately broad because “complete CV” means auditin
 
 1. **Identity line:** name, professional headline, phone, email, portfolio, GitHub, LinkedIn. All links must remain clickable.
 2. **Summary:** two compact lines stating the AI systems focus and breadth across agent workflows/infrastructure and product engineering. Avoid “enthusiast,” generic objective language, and unsupported claims.
-3. **Experience:** current Subhanu FDE internship first; Equvinoxis AI/ML internship second. Retain official titles. Give Subhanu a concise overview of the Enterprise AI platform (LibreChat and agents), KiddyPi app, and Voice Agent. Include only verified Equvinoxis work.
+3. **Experience:** current Subhanu FDE internship first; Equvinoxis AI/ML internship second. Retain official titles. Give Subhanu a concise technical overview of agent workflows in the Enterprise AI platform, KiddyPi app development, and a Voice Agent. Include only verified Equvinoxis work.
 4. **Selected projects:** include the five required major projects—CREDA, TrustLayer, AARNA, SmartHelm, and PayGuard-AgentX—in a compact, scannable format. Keep status/attribution visible (shipped, team-built testnet, existing app/release unverified, prototype). If the evidence audit changes a status, the ledger takes precedence.
 5. **Skills:** grouped, not a keyword wall. Candidate group labels: Agent & Tool Systems; AI/LLM & Retrieval; Backend & Data; Product & Mobile; Delivery & Infrastructure. Keep only supported items; candidates to verify include MCP, LangGraph, Python/FastAPI, TypeScript/Next.js, local AI/RAG, PostgreSQL, Docker/CI, Flutter, and Firebase.
 6. **Education:** BNMIT degree, dates, and CGPA as above.

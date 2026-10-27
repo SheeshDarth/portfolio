@@ -77,7 +77,7 @@ All five are compulsory major projects. Each needs an explicit status label, sho
 
 Subhanu work is a separate current experience section, not one of the five public-project cards. Use **FDE Intern — Subhanu | Current** and avoid an invented start date.
 
-Present this as a concise, high-level overview: working across the **Enterprise AI platform (LibreChat and its agents), the KiddyPi app, and a Voice Agent**. Do not include internal progress states or critical implementation details. Do not show proprietary system diagrams, exact integration architecture, screenshots, internal URLs, or customer/provider specifics.
+Present this as a concise technical overview: work across Subhanu's **Enterprise AI platform (LibreChat and its agent workflows), the KiddyPi app, and a Voice Agent**, with emphasis on agent orchestration, conversational interfaces, and product integration. Do not include internal progress states or critical implementation details. Do not show proprietary system diagrams, exact integration architecture, screenshots, internal URLs, or customer/provider specifics.
 
 ## 7. Figma concept deliverable
 
